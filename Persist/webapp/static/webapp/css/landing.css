@@ -1,8 +1,12 @@
 *{
 	padding: 0;
 	margin: 0;
-	box-sizing: border-box;
+	/*box-sizing: border-box;*/
+	/*border: black solid 5px;*/
+}
 
+p{
+	font-family: 'Arapey', serif;
 }
 
 .content{
@@ -14,56 +18,67 @@
 }
 
 .page{
-	padding: 350px 0;
+	height: 100%;
 }
 
 .page.first{
- 	background-color: gray;
- 	color: navy;
+	padding: 30rem 0;
+ 	background-image: url("../assets/sunset.jpg");
+ 	/*background-attachment: fixed;*/
+ 	background-position: center;
+ 	background-repeat: no-repeat;
 }
 
-.page.first > h1{
-	font-family: 'Strait', sans-serif;
-	font-size: 180px;
-	text-align: center;
-	margin : 0;
+.pagefirstcontent{
+	display: block;
 }
 
-.page.first > h3{
-	font-size: 30px;
+.pagefirstcontent > h1{
+	font-family: 'Oswald', sans-serif;
+	font-size: 20rem;
 	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 5rem;
+	color: #F0F0F0;
 }
+
+.pagefirstcontent> p{
+	font-size: 3rem;
+	text-align: center;
+	color: #F06060;
+}
+
+
 
 .page.second{
 	padding: 200px 100px;
 	display: flex;
 	flex-direction: row;
-	background-color: green;
+	background-color: #010101;
 	flex-wrap: wrap;
 	justify-content: space-around;
 }
 
 .page.second > p{
 	width: 30%;
-	font-size: 25px;
+	font-size: 4.5rem;
 	text-align: left;
 }
 
 .graph{
 	width: 30%;
-	padding: 200px;
+	padding: 20rem;
 	background-color: white;
 }
 
 .page.third{
-	padding: 200px 100px;
+	padding: 20rem 10rem;
 	display: flex;
 	flex-direction: row;
 	background-color: orange;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: center;
 }
-
 
 .totalpledged{
 	width: 60%;
@@ -71,36 +86,47 @@
 	text-align: center;
 	display: flex;
 	flex-direction: column;
+	margin: 2rem;
 }
 
 .totalpledged > h2{
-	font-size: 50px;
+	font-size: 5rem;
 }
 
 .totalpledged > h1{
-	font-size: 80px;
+	font-size: 20rem;
 }
 
 .page.fourth{
-	padding: 200px 100px;
-	display: flex;
-	flex-direction: row;
-	background-color: pink;
-	flex-wrap: wrap;
-	justify-content: space-around;
-}
-
-.profiles{
+	padding: 20rem 10rem;
 	display: flex;
 	flex-direction: row;
 	background-color: violet;
 	justify-content: space-around;
+}
 
+.page.fourth > h1{
+	font-size: 15rem;
+	text-transform: uppercase;
 }
 
 .profile{
-	padding: 100px;
-	margin: 20px;
+	padding: 5rem;
+	margin: 2rem;
+	background-color: white;
+}
+
+.pictureplaceholder{
+	padding: 10rem;
+	border-radius: 100%;
 	background-color: black;
 }
 
+.profile > p{
+	font-size: 2rem;
+}
+
+.profile > h1{
+	font-size: 2rem;
+	text-align: center;
+}

@@ -2,17 +2,19 @@
 {% load staticfiles %}
 {% block extra_head %}
 <link href="{% static 'webapp/css/landing.css' %}" type="text/css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Strait" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Arapey|Oswald" rel="stylesheet">
 {% endblock %}
 {% block content %}
 	<!-- {% include "webapp/header.html" %} -->
 	<div class="content">
 	  <div class="page first">
-		<h1>Persist</h1>
-	  	<h3 class="motto">1% goes to charity</h3>
+	  	<div class="pagefirstcontent">
+			<h1>Persist</h1>
+		  	<p class="motto">Crush habits</p>
+	  	</div>
 	  </div>
 	  <div class="page second">
-	  	<p>Welcome to Persist. This website aids sticking to and filler and fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand filler!</p>
+	  	<p>Welcome to Persist.<br> Break your habits today by pledging money to a charity of your choice.<br>If you make it until your goal date, your pledge is returned.<br>Sign up today!</p>
 	  	<div class="graph barhabits">
 	  	</div>
 	  	<div class="graph piehabits">
@@ -27,19 +29,26 @@
 	  	</div>
 	  </div>
 	  <div class="page fourth">
-		<h1>Who are we?</h1>
-	  	<div class="profiles">
-	  		<div class="profile daniel">
-
+	  		<h1>Who are we?</h1>
+	  		<div class="profile">
+	  			<div class="pictureplaceholder"></div>
+	  			<h1>Daniel Yuan</h1>
+	  			<p>Backend boy</p>
 	  		</div>
-	  		<div class="profile felix">
-
+	  		<div class="profile">
+				<div class="pictureplaceholder"></div>
+				<h1>Raymond Miao</h1>
+	  			<p>Backend boy</p>
 	  		</div>
-	  		<div class="profile raymond">
-
+	  		<div class="profile">
+				<div class="pictureplaceholder"></div>
+				<h1>Felix Li</h1>
+	  			<p>Both</p>
 	  		</div>
-	  		<div class="profile jishnu">
-
+	  		<div class="profile">
+				<div class="pictureplaceholder"></div>
+				<h1>Jishnu Datta</h1>
+				<p>:Frontend boy</p>
 	  		</div>
 	  	</div>
 	  </div>
