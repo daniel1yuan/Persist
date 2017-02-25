@@ -15,9 +15,9 @@ class Habit(models.Model):
 	description = models.TextField()
 	monetary_amount = models.IntegerField(default = 0)
 	start_date = models.DateField(default = django.utils.timezone.now)
-	end_date =  models.DateField(blank = True)
+	end_date =  models.DateField(null = True)
 	status = models.IntegerField(default = 0)
 	charity = models.IntegerField(default = 0)
-	customer = models.ForeignKey("Customer", on_delete = models.CASCADE, null = True)
+	user = models.ForeignKey(User, on_delete = models.CASCADE, null = True)
 
 
