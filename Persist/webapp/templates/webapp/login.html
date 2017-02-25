@@ -3,8 +3,38 @@
 
 {% block extra_head %}
   <script src="{% static 'webapp/js/auth.js' %}"></script>
+  <script src="{% static 'webapp/js/login-page.js' %}"></script>
+
+  <link rel = "stylesheet" type = "text/css" href = "{% static 'webapp/css/login.css' %}">
+  <link rel = "stylesheet" type = "text/css" href = "{% static 'webapp/css/buttons.css' %}">
 {% endblock %}
 
 {% block content %}
-  LSTESETASTAS
+  <div class = "page-container">
+    <div class = "login-container">
+      <div class = "login-title">
+        <div class = "text-wrapper">Login to Persist</div>
+      </div>
+      <div class = "login-IO">
+        <div class = "input-field">
+          <div class = "input-title">Username:
+          </div>
+          <input type = "text" class = "input-area" id = "username"></input>
+        </div>
+        <div class = "input-field">
+          <div class = "input-title">Password:
+          </div>
+          <input type = "password" class = "input-area" id = "password"></input>
+        </div>
+        <button class = "login-btn cta-button" onclick = "login_click()">
+          <div class = "text-wrapper">Sign In</div>
+        </button>
+      </div>
+      <div class = "sign-up">
+        <button class = "cta-button signup-btn" onclick = "signup_click()">
+          <div class = "text-wrapper">Sign Up</div>
+        </button>
+      </div>
+    </div>
+  </div>
 {% endblock %}
