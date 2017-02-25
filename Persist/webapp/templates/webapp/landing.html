@@ -1,8 +1,24 @@
 {% extends "webapp/__base.html" %}
 {% load staticfiles %}
-
 {% block extra_head %}
+<link href="{% static 'webapp/css/landing.css' %}" type="text/css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Strait" rel="stylesheet">
 {% endblock %}
-
 {% block content %}
+	<!-- {% include "webapp/header.html" %} -->
+	<div class="content">
+	  <div class="page first">
+		<h1>Persist</h1>
+	  	<h3 class="motto">1% goes to charity</h3>
+	  </div>
+	  <div class="page second">
+	  	<!-- <div class="pagecontent2"> -->
+		  	<p>Welcome to Persist. This website aids sticking to and filler and fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand fillerand filler!</p>
+		  	<div class="graph a">
+		  	</div>
+		  	<div class="graph b">
+		  <!-- </div> -->
+	  	</div>
+	  </div>
+	</div>
 {% endblock %}
