@@ -1,55 +1,66 @@
 *{
 	padding: 0;
 	margin: 0;
-	/*box-sizing: border-box;*/
-	/*border: black solid 5px;*/
+	box-sizing: border-box;
+	/*border: black solid 1px;*/
+}
+
+h1, h2, h3{
+	font-family: 'Oswald', sans-serif;
+}
+
+h1{
+	text-transform: uppercase;
 }
 
 p{
-	font-family: 'Arapey', serif;
+	font-family: 'Roboto Slab', serif;
 }
 
 .content{
+
+}
+
+.pages{
 	display: flex;
-	width: 100%;
 	flex-direction: column;
-	background-color: black;
 	flex-wrap: wrap;
 }
 
 .page{
-	height: 100%;
 }
 
 .page.first{
-	padding: 30rem 0;
+	padding: 100px 0;
  	background-image: url("../assets/sunset.jpg");
- 	/*background-attachment: fixed;*/
  	background-position: center;
  	background-repeat: no-repeat;
 }
-
-.pagefirstcontent{
-	display: block;
+.pagecontent{
+	margin: 50px;
+	height: 700px;
+	border: solid 4px white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 50px 50px;
 }
 
-.pagefirstcontent > h1{
-	font-family: 'Oswald', sans-serif;
-	font-size: 20rem;
+.pagecontent.first{
 	text-align: center;
-	text-transform: uppercase;
-	letter-spacing: 5rem;
-	color: #F0F0F0;
+	color: white;
 }
 
-.pagefirstcontent> p{
-	font-size: 3rem;
-	text-align: center;
-	color: #F06060;
+.first > h1{
+	font-size: 200px;
+	letter-spacing: 50px;
 }
-
-
-
+.first> p{
+	font-size: 30px;
+	text-transform: lowercase;
+	letter-spacing: 20px;
+}
+/*
 .page.second{
 	padding: 200px 100px;
 	display: flex;
@@ -66,8 +77,7 @@ p{
 }
 
 .graph{
-	width: 30%;
-	padding: 20rem;
+	size: 300px;
 	background-color: white;
 }
 
@@ -126,7 +136,7 @@ p{
 	font-size: 2rem;
 }
 
-.profile > h1{
+.profile > h3{
 	font-size: 2rem;
 	text-align: center;
-}
+}*/
