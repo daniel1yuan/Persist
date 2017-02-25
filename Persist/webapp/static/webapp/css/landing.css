@@ -1,0 +1,58 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+
+}
+
+.content{
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	background-color: black;
+	flex-wrap: wrap;
+}
+
+.page{
+	padding: 350px 0;
+}
+
+.page.first{
+
+ 	background-color: gray;
+ 	color: navy;
+}
+
+.page.first > h1{
+	font-family: 'Strait', sans-serif;
+	font-size: 180px;
+	text-align: center;
+	margin : 0;
+}
+
+.page.first > h3{
+	font-size: 30px;
+	text-align: center;
+}
+
+
+.page.second{
+	padding: 30px;
+	display: flex;
+	flex-direction: row;
+	background-color: green;
+	border: black 1px solid;
+	flex-wrap: wrap;
+}
+
+.page.second > p{
+	width: 30%;
+	font-size: 3rem;
+	text-align: left;
+	border: black 1px solid;
+}
+
+.graph{
+	width: 30%;
+	border: black 1px solid;
+}
