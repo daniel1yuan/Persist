@@ -34,7 +34,6 @@ def login_page(request):
   return render(request, 'webapp/login.html', context)
 
 #Authentication Views
-@csrf_exempt
 def login_user(request):
   username = request.POST['username']
   password = request.POST['password']
@@ -45,12 +44,10 @@ def login_user(request):
   else:
     return HttpResponse(json.dumps({"success": False}))
 
-@csrf_exempt
 def logout_user(request):
   logout(request)
   return HttpResponse(json.dumps({"success": True}))
 
-@csrf_exempt
 def add_user(request):
   username = request.POST['username']
   password = request.POST['password']
@@ -66,7 +63,6 @@ def del_cur_user(request):
   else:
     return HttpResponse(json.dumps({"success": False}))
 
-@csrf_exempt
 def del_user(request):
   user = request.user
   #Check if the admin is logged on
@@ -90,3 +86,18 @@ def get_habit(request):
   habit_serial = serializers.serialize('json', [habit_obj])
   #[1:-1] to remove brackets?
   return HttpResponse(habit_serial[1:-1], mimetype='application/json')
+def create_habit(request):
+  name = request.POST['name']
+  description = request.POST['description']
+  monetary_amount = int(request.POST['monetary_amount'])
+  start_date = request.POST['start_date']
+  end_date = request.POST['end_date']
+  status = int(request.POST['success_status'])
+  charity = int(request.POST['charity'])
+  user = request.user()
+  if (not user.is_authenticated()):
+    return HttpResponse(json.dumps({"success": False}))
+
+  habit = Habit.objects.create_user(name=name,description=description,monetary_amount=monetary_amount,start_date=start_date,end_date=end_date,status=status,charity=charity,user=user)
+  habit.save()
+  return HttpResponse(json.dumps({"success": True}))

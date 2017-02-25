@@ -2,11 +2,11 @@
 {% load staticfiles %}
 
 {% block extra_head %}
-  <script src="{% static 'webapp/js/habits.js' %}"></script>
+<script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
   <script src="{% static 'webapp/js/auth.js' %}"></script>
+  <script src="{% static 'webapp/js/habits.js' %}"></script>  
 {% endblock %}
 
 {% block content %}
-  {% include "webapp/header.html" %}
   LSTESETASTAS
 {% endblock %}
