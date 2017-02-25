@@ -1,17 +1,15 @@
 from __future__ import unicode_literals
-
 from django.db import models
+from django.contrib.auth.models import User
 
 import django.utils
-
 import datetime
 
+class Customer(models.Model):
+  user = models.OneToOneField(User, on_delete=models.CASCADE)
+  habits = models.TextField(null=True)
+
 # Create your models here.
-
-class User(models.Model):
-	username = models.CharField(max_length = 20)
-	pass
-
 class Habit(models.Model):
 	name = models.CharField(max_length = 20)
 	description = models.TextField()
@@ -20,6 +18,6 @@ class Habit(models.Model):
 	end_date =  models.DateField(blank = True)
 	status = models.IntegerField(default = 0)
 	charity = models.IntegerField(default = 0)
-	user = models.ForeignKey('User', on_delete = models.CASCADE, null = True)
+	customer = models.ForeignKey("Customer", on_delete = models.CASCADE, null = True)
 
 
