@@ -8,58 +8,79 @@
 h1, h2, h3{
 	font-family: 'Oswald', sans-serif;
 }
-
 h1{
 	text-transform: uppercase;
 }
-
 p{
 	font-family: 'Roboto Slab', serif;
 }
 
 .content{
-
+	background-color: black;
 }
-
 .pages{
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
 }
-
 .page{
-}
-
-.page.first{
-	padding: 100px 0;
- 	background-image: url("../assets/sunset.jpg");
- 	background-position: center;
- 	background-repeat: no-repeat;
+	background-color: black;
 }
 .pagecontent{
 	margin: 50px;
-	height: 700px;
+	height: 800px;
 	border: solid 4px white;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
 	border-radius: 50px 50px;
 }
 
-.pagecontent.first{
+
+.page.first{
+ 	background-image: url("../assets/sunset.jpg");
+ 	background-position: center;
+ 	background-repeat: no-repeat;
+}.pagecontent.first{
 	text-align: center;
 	color: white;
-}
-
-.first > h1{
+	flex-direction: column;
+	justify-content: center;
+}.first > h1{
 	font-size: 200px;
 	letter-spacing: 50px;
-}
-.first> p{
+}.first> p{
 	font-size: 30px;
 	text-transform: lowercase;
 	letter-spacing: 20px;
 }
+
+
+.page.second{
+	background: #000022;
+}.pagecontent.second{
+	color: white;
+	flex-direction: row;
+	justify-content: space-between;
+}.second > h1{
+	margin: 50px 0 50px 50px;
+	font-size: 200px;
+	letter-spacing: 50px;
+	width: 40%;
+}.desc_stats{
+	margin: 50px 50px 50px 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: top;
+	width: 60%;
+}.desc_stats > p{
+	font-size: 30px;
+	letter-spacing: 5px;
+	line-height: 70px
+}.basicstats{
+	font-size: 50px;
+	letter-spacing: 20px;
+}
+
+
 /*
 .page.second{
 	padding: 200px 100px;
