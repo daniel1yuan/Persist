@@ -96,7 +96,7 @@ function del_cur_user(callback){
   }); 
 }
 
-//  Delets the user specified by username
+//  Deletes the user specified by username
 function deluser(username, callback){
   $.ajax({
     type: "POST",
@@ -113,9 +113,31 @@ function deluser(username, callback){
         } 
       }else{
         //If deluser fails(probably because no superuser)
-        console.log("Deleter failed");
+        console.log("Delete failed");
       }
     }
   }); 
 }
-//Helper functions
+
+//Returns true in callback if there is an authorized user currently using system
+function auth(callback){
+  $.ajax({
+    type: "GET",
+    url: "/_auth/",
+    success: function(res){
+      res = JSON.parse(res);
+      if (res.success && res.logged_in){
+        //Someone is logged in , return true
+        if (callback){
+          callback(true);
+        }
+      }else{
+        //No one is logged in, return false
+        if (callback){
+          callback(false);
+        }
+      }
+    }
+  });  
+}
+
