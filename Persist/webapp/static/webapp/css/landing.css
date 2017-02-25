@@ -1,0 +1,18 @@
+.content{
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	height: 300px;
+	background-color: black;
+}
+
+.page{
+	width: 200px;
+ 	height: 200px;
+ 	margin: auto;
+ 	background-color: deepskyblue;
+}
+
+.page.first > h1.logoname{
+	color: white;
+}
