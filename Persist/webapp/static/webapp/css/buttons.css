@@ -1,0 +1,17 @@
+.cta-button{
+  display: flex;
+  margin-top: 10px;
+  width: 80%;
+  height: 25px;
+  background-color: red;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 15px;
+  box-shadow: 0px 8px 15px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover{
+  box-shadow: 0px 8px 15px rgba(0,0,0,0.2);
+}
