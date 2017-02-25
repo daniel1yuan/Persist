@@ -1,6 +1,5 @@
 from django.shortcuts import redirect,render
 from django.http import Http404, JsonResponse, HttpResponseForbidden, HttpResponse
-from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate, login, logout
 from webapp.models import User, Customer, Habit
 from django.core import serializers
@@ -81,11 +80,17 @@ def is_logged_in(request):
   return HttpResponse(json.dumps({"success": False}))
 
 def get_habit(request):
+  print "ABCDEFGHIJK"
   habit_id = int(request.POST['habit_id'])
-  habit_obj = Habit.objects.get(id=habit_id)
-  habit_serial = serializers.serialize('json', [habit_obj])
-  #[1:-1] to remove brackets?
-  return HttpResponse(habit_serial[1:-1], mimetype='application/json')
+  try:
+    habit_obj = Habit.objects.get(id=habit_id)
+    habit_obj["success"] = True 
+    habit_serial = serializers.serialize('json', [habit_obj])
+    #[1:-1] to remove brackets?
+    return HttpResponse(habit_serial[1:-1], mimetype='application/json')
+  except Habit.DoesNotExist:
+    return HttpResponse(json.dumps({"success": False}))
+
 def create_habit(request):
   name = request.POST['name']
   description = request.POST['description']

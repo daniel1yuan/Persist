@@ -12,6 +12,6 @@ urlpatterns = [
   url(r'^_del_cur_user/$', views.del_cur_user, name='del_cur_user'),
   url(r'^_deluser/$', views.del_user, name='deluser'),
   
-  url(r'^/get_habit/$', views.get_habit, name='get_habit'),
-  url(r'^/create_habit/$', views.create_habit, name='create_habit')
+  url(r'^_get_habit/$', views.get_habit, name='get_habit'),
+  url(r'^_create_habit/$', views.create_habit, name='create_habit')
 ]
