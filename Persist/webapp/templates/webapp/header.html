@@ -1,7 +1,11 @@
-<div class = "header">
-  <div class = "nav">
-      <ul class = "site-nav">
-        <li><a class = "header-link" href = "/landing.html">Home</a></li>
-      </ul>
-  </div>
+
+{% load staticfiles %}
+<div class = "header-container">
+  <img class = "logo" src = "{% static 'webapp/assets/logo.svg' %}"></img>
+  <ul class = "nav">
+    <li><a class = "header-link" href = "/" >test</a></li>
+    <li><a class = "header-link" href = "/" >test</a></li>
+    <li><a class = "header-link" href = "/" >test</a></li>
+  </ul>
+    <a class = "header-link" id = "header-login">Login</a>
 </div>

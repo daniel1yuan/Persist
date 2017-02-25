@@ -2,9 +2,9 @@
 {% load staticfiles %}
 
 {% block extra_head %}
-  <script src="{% static 'webapp/js/auth.js' %}"></script>
 {% endblock %}
 
 {% block content %}
+  {% include "webapp/header.html" %}
   LSTESETASTAS
 {% endblock %}
