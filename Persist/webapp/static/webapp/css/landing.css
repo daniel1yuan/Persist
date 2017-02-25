@@ -29,11 +29,21 @@ p{
 .pagecontent{
 	margin: 50px;
 	height: 800px;
-	border: solid 4px white;
 	display: flex;
 	border-radius: 50px 50px;
+	color: white;
+}.pagetitlebox{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 30%;
+	margin: 50px;
+	font-size: 200px;
+	letter-spacing: 50px;
+}.pagetitlebox > h1{
+	font-size: 150px;
+	letter-spacing: 50px;
 }
-
 
 .page.first{
  	background-image: url("../assets/sunset.jpg");
@@ -41,30 +51,25 @@ p{
  	background-repeat: no-repeat;
 }.pagecontent.first{
 	text-align: center;
-	color: white;
 	flex-direction: column;
 	justify-content: center;
+	border: solid 4px white;
 }.first > h1{
 	font-size: 200px;
 	letter-spacing: 50px;
 }.first> p{
-	font-size: 30px;
+	font-size: 20px;
 	text-transform: lowercase;
 	letter-spacing: 20px;
 }
 
-
 .page.second{
 	background: #000022;
 }.pagecontent.second{
-	color: white;
 	flex-direction: row;
-	justify-content: space-between;
-}.second > h1{
-	margin: 50px 0 50px 50px;
-	font-size: 200px;
-	letter-spacing: 50px;
-	width: 40%;
+	justify-content: center;
+}.second.pagetitlebox > h1{
+	text-align: left;
 }.desc_stats{
 	margin: 50px 50px 50px 0;
 	display: flex;
@@ -80,24 +85,31 @@ p{
 	letter-spacing: 20px;
 }
 
-
-/*
-.page.second{
-	padding: 200px 100px;
+.page.fourth{
+	background: #222200;
+}.pagecontent.fourth{
+	flex-direction: row-reverse;
+	justify-content: space-between;
+}.fourth.pagetitlebox > h1{
+	text-align: right;
+}.profile{
 	display: flex;
-	flex-direction: row;
-	background-color: #010101;
-	flex-wrap: wrap;
-	justify-content: space-around;
+	flex-direction: column;
+	align-items: center;
+	width: 300px;
+	padding: 50px;
+}.profile > h3{
+	text-align: center;
+	padding: 20px 0;
+}.profile > p{
+}.pictureplaceholder{
+	width: 200px;
+	height: 200px;
+	background-color: black;
+	border-radius: 100%;
 }
 
-.page.second > p{
-	width: 30%;
-	font-size: 4.5rem;
-	text-align: left;
-}
-
-.graph{
+/*.graph{
 	size: 300px;
 	background-color: white;
 }
@@ -126,38 +138,10 @@ p{
 
 .totalpledged > h1{
 	font-size: 20rem;
-}
+}*/
 
-.page.fourth{
-	padding: 20rem 10rem;
-	display: flex;
-	flex-direction: row;
-	background-color: violet;
-	justify-content: space-around;
-}
-
-.page.fourth > h1{
-	font-size: 15rem;
-	text-transform: uppercase;
-}
-
-.profile{
-	padding: 5rem;
-	margin: 2rem;
-	background-color: white;
-}
-
-.pictureplaceholder{
-	padding: 10rem;
-	border-radius: 100%;
-	background-color: black;
-}
-
-.profile > p{
-	font-size: 2rem;
-}
-
-.profile > h3{
-	font-size: 2rem;
-	text-align: center;
+/*@media(max-width: 400px){
+	h1, h2, h3{
+		font-size: 20px !important;
+	}
 }*/
