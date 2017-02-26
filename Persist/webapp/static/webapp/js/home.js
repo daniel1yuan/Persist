@@ -21,8 +21,15 @@ function sort_timeSince(habits){
   return sortedArray;
 }
 
+function loadHabits(habits){
+  for (var i in habits){
+    console.log(habits[i]);
+  }
+}
+
 $(document).ready(function(){
   get_all_habits(function(habits){
     test = sort_timeSince(habits);
+    loadHabits(test);
   });
 });
