@@ -5,6 +5,9 @@ from webapp.models import User, Customer, Habit
 from django.core import serializers
 from django.views.decorators.csrf import csrf_exempt
 
+from django.utils import timezone
+from datetime import datetime
+
 from helper import habits_arr, arr_str
 import json
 import os
@@ -99,13 +102,16 @@ def create_habit(request):
   name = request.POST['name']
   description = request.POST['description']
   monetary_amount = int(request.POST['monetary_amount'])
-  end_date = request.POST['end_date']
+  end_date = int((request.POST['end_date']))/(1000.0)
+  start_date = (datetime.utcnow()-datetime(1970,1,1)).total_seconds()
+  last_clicked = (datetime.utcnow()-datetime(1970,1,1)).total_seconds()
+  print end_date
   status = int(request.POST['success_status'])
   charity = int(request.POST['charity'])
   user = request.user
   if (not user.is_authenticated()):
     return HttpResponse(json.dumps({"success": False}))
-  habit = Habit(name=name,description=description,monetary_amount=monetary_amount,end_date=end_date,status=status,charity=charity,user=user)
+  habit = Habit(name=name,description=description,monetary_amount=monetary_amount,end_date=end_date,status=status,charity=charity,user=user,start_date=start_date,last_clicked=last_clicked)
   habit.save()
   print user.customer.habits
   user.customer.habits += "," + str(habit.pk)
@@ -146,9 +152,9 @@ def change_habit(request):
     except:
       habit.monetary_amount = habit.monetary_amount
     try:
-      habit.tend_date = request.POST['end_date']
+      habit.end_date = int((request.POST['end_date']))/(1000.0) 
     except:
-      habit.end_date = habit.end_date
+      habit.end_date = int((request.POST['end_date']))/(1000.0)
     try:
       habit.status = request.POST['success_status']
     except:
