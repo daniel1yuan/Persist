@@ -91,6 +91,7 @@ def get_habit(request):
   habit_id = int(request.POST['habit_id'])
   try:
     habit_obj = Habit.objects.get(pk=habit_id)
+    print habit_obj.monetary_amount
     habit_serial = serializers.serialize('json', [habit_obj])
     #[1:-1] to remove brackets?
     return HttpResponse(json.dumps(habit_serial[1:-1]), content_type='application/json')
@@ -101,16 +102,16 @@ def create_habit(request):
   name = request.POST['name']
   description = request.POST['description']
   monetary_amount = int(request.POST['monetary_amount'])
-  end_date = int((request.POST['end_date']))/(1000.0)
-  start_date = (datetime.utcnow()-datetime(1970,1,1)).total_seconds()
-  last_clicked = (datetime.utcnow()-datetime(1970,1,1)).total_seconds()
-  #print end_date
+  end_date = int(int((request.POST['end_date']))/(1000.0))
+  start_date = int((datetime.utcnow()-datetime(1970,1,1)).total_seconds())
+  last_clicked = int((datetime.utcnow()-datetime(1970,1,1)).total_seconds())
   status = int(request.POST['success_status'])
   charity = int(request.POST['charity'])
   user = request.user
   if (not user.is_authenticated()):
     return HttpResponse(json.dumps({"success": False}))
   habit = Habit(name=name,description=description,monetary_amount=monetary_amount,end_date=end_date,status=status,charity=charity,user=user,start_date=start_date,last_clicked=last_clicked)
+  print habit.start_date
   habit.save()
   user.customer.habits += "," + str(habit.pk)
   user.customer.save()

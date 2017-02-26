@@ -1,6 +1,6 @@
 {% load staticfiles %}
 <link href="{% static 'webapp/css/habitform.css' %}" type="text/css" rel="stylesheet">
-<div class="habitform">
+<div id="habitform" class="habitform">
   <form class="habitformform">
     <label for="name">Habit</label>
     <input type="text" id="name" name="Name" required>
@@ -20,6 +20,6 @@
     </select>
     <label for="pledge_amount">Pledge Amount (USD)</label>
     <input type="number" id="pledge_amount" name="Pledge_amount" min="5" value="5" required>
-    <input type="submit" value="Submit">
+    <input type="submit" id="new_habit" value="Submit">
   </form>
 </div>
