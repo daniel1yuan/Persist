@@ -1,5 +1,5 @@
 * {
-  border-radius: 0 !important;
+  /*border-radius: 0 !important;*/
 }
 
 .habit-header-bar{
@@ -7,26 +7,48 @@
 	flex-direction: row;
 	width:100%;
 	margin-bottom:20px;
+	align-items: center;
+	height: 100px;
 }
 
-#habit-menu{
-	display:flex;
-	flex-direction:column;
+#deletebutton{
+	border: none;
 	width:15%;
-	background-color:black;
-	border-color:rgba(0,0,0,0);
-	vertical-align:center;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	filter: invert(100%);
 }
 
-#habit-add{
-	width:15%;
-	background-color:black;
-	border-color:rgba(0,0,0,0);
+.deletebuttonimg{
+	width: 60px;
+	height: 60px;
 }
+
+#addbutton{
+	border: none;
+	width:15%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	filter: invert(100%);
+}
+
+.addbuttonimg{
+	width: 60px;
+	height: 60px;
+}
+
 
 .header-wrapper{
 	width:70%;
 	text-align: center;
 	background-color:black;
 	color:white;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
