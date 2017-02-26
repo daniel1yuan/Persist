@@ -3,6 +3,7 @@
 	margin: 0;
 	box-sizing: border-box;
 	/*border: black solid 1px;*/
+	 user-select: none;
 }
 
 h1, h2, h3{
@@ -19,9 +20,9 @@ p{
 	background-color: black;
 }
 .pages{
+	padding-top: 40px;
 	display: flex;
 	flex-direction: column;
-	flex-wrap: wrap;
 }
 .page{
 	background-color: black;
@@ -43,6 +44,7 @@ p{
 }.pagetitlebox > h1{
 	font-size: 150px;
 	letter-spacing: 50px;
+	text-align: center;
 }
 
 .page.first{
@@ -57,10 +59,10 @@ p{
 }.first > h1{
 	font-size: 200px;
 	letter-spacing: 50px;
-}.first> p{
+}#motto{
 	font-size: 20px;
 	text-transform: lowercase;
-	letter-spacing: 20px;
+	letter-spacing: 15px;
 }
 
 .page.second{
@@ -68,36 +70,62 @@ p{
 }.pagecontent.second{
 	flex-direction: row;
 	justify-content: center;
-}.second.pagetitlebox > h1{
-	text-align: left;
 }.desc_stats{
 	margin: 50px 50px 50px 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: top;
+	align-items: center;
 	width: 60%;
 }.desc_stats > p{
-	font-size: 30px;
+	font-size: 20px;
 	letter-spacing: 5px;
 	line-height: 70px
-}.basicstats{
-	font-size: 50px;
+}.desc_stats > h2{
+	font-size: 30px;
 	letter-spacing: 20px;
+}.desc_stats > img{
+	width: 450px;
+	height: 450px;
+	margin: 20px 0;
+}span.graphvalue1{
+ 	color: red;
+}span.graphvalue2{
+ 	color: blue;
 }
+
+
+.page.third{
+	background: #696969;
+}.pagecontent.third{
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+}.graph-desc{
+	text-align: center;
+}.graph-desc > img{
+	width: 400px;
+	height: 400px;
+	margin: 20px 0;
+}
+
 
 .page.fourth{
 	background: #222200;
 }.pagecontent.fourth{
 	flex-direction: row-reverse;
 	justify-content: space-between;
-}.fourth.pagetitlebox > h1{
-	text-align: right;
 }.profile{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	width: 300px;
 	padding: 50px;
+	border-radius: 20px;
+	transition: all 0.2s ease-out;
+}.profile:hover{
+	background-color: gray;
 }.profile > h3{
 	text-align: center;
 	padding: 20px 0;
@@ -108,40 +136,3 @@ p{
 	background-color: black;
 	border-radius: 100%;
 }
-
-/*.graph{
-	size: 300px;
-	background-color: white;
-}
-
-.page.third{
-	padding: 20rem 10rem;
-	display: flex;
-	flex-direction: row;
-	background-color: orange;
-	flex-wrap: wrap;
-	justify-content: center;
-}
-
-.totalpledged{
-	width: 60%;
-	background-color: red;
-	text-align: center;
-	display: flex;
-	flex-direction: column;
-	margin: 2rem;
-}
-
-.totalpledged > h2{
-	font-size: 5rem;
-}
-
-.totalpledged > h1{
-	font-size: 20rem;
-}*/
-
-/*@media(max-width: 400px){
-	h1, h2, h3{
-		font-size: 20px !important;
-	}
-}*/

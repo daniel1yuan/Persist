@@ -6,6 +6,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
 }
 
 .logo{
@@ -31,6 +32,7 @@
 .nav li:hover .header-link{
   color: white;
   background-color: #454545;
+  transition: width 2s;
 }
 
 #header-login{

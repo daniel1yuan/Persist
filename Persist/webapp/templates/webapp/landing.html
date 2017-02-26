@@ -2,7 +2,6 @@
 {% load staticfiles %}
 {% block extra_head %}
 <link href="{% static 'webapp/css/landing.css' %}" type="text/css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Slab" rel="stylesheet">
 {% endblock %}
 {% block content %}
 	<div class="content">
@@ -10,7 +9,7 @@
 		<div class="pages">
 			{% include "webapp/landing_one.html" %}
 			{% include "webapp/landing_two.html" %}
-		  	<!-- {% include "webapp/landing_three.html" %} -->
+		  	{% include "webapp/landing_three.html" %}
 		  	{% include "webapp/landing_four.html" %}
 		</div>
 	</div>
