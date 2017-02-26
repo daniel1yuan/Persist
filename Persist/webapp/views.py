@@ -85,10 +85,7 @@ def get_habit(request):
     habit_obj = Habit.objects.get(id=habit_id)
     habit_serial = serializers.serialize('json', [habit_obj])
     #[1:-1] to remove brackets?
-    print habit_serial
-    print "RETURNING HABIT"
     return HttpResponse(json.dumps(habit_serial[1:-1]), content_type='application/json')
-    #return HttpResponse(json.dumps({"success": True}))
   except Habit.DoesNotExist:
     return HttpResponse(json.dumps({"pk": -1}))
 

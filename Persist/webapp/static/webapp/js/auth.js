@@ -106,7 +106,7 @@ function deluser(username, callback){
   $.ajax({
     type: "POST",
     url: "/_deluser/",
-    data: {i
+    data: {
       "csrfmiddlewaretoken": csrftoken,
       "username": username,
     },
