@@ -56,9 +56,9 @@ function get_all_habits(callback) {
     success: function(res) {
       var parsed = JSON.parse(res);
       for (var idx in parsed) {
-        tmp = JSON.parse(parsed[idx])
-        console.log(tmp)
-        parsed[idx] = tmp
+        tmp = JSON.parse(parsed[idx]);
+        parsed[idx] = tmp.fields;
+        parsed[idx]["id"] = tmp.pk;
       }
       if (callback) {
         callback(parsed);
