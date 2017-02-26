@@ -70,6 +70,7 @@ function clickSetter(ids){
 function updateLastClick(id){
   params = {"last_clicked": new Date().getTime()};
   change_habit(id, params, function(res){
+    window.location = "/home";
   });
 }
 
