@@ -1,6 +1,3 @@
-function test(x) {
-  console.log(x);
-}
 function get_habit(id, callback) {
   var csrftoken = getCookie('csrftoken');
   $.ajax({
@@ -19,14 +16,13 @@ function get_habit(id, callback) {
 	});
 }
   
-function create_habit(callback) {
+function create_habit(params, callback) {
   var csrftoken = getCookie('csrftoken');
   $.ajax({
     type: "POST",
-    url: "/_create_habits/",
+    url: "/_create_habit/",
     data: {
       "csrfmiddlewaretoken": csrftoken,
-      "id": id,
       "name": params.name,
       "description": params.description,
       "monetary_amount": params.monetary_amount,
@@ -88,6 +84,30 @@ function change_habit(id, params, callback){
     },
     success: function(res) {
       res = JSON.parse(res);
+      if (res.success) {
+        if (callback){
+          callback(true);
+        }
+      }else{
+        if (callback){
+          callback(false);
+        }
+      }
+    }
+  });
+}
+
+function delete_habit(id, callback){
+  var csrftoken = getCookie('csrftoken');
+  $.ajax({
+    type: "POST",
+    url: "/_delete_habit/",
+    data: {
+      "csrfmiddlewaretoken": csrftoken,
+      "id": id
+    },
+    success: function(res) {
+      var res = JSON.parse(res);
       if (res.success) {
         if (callback){
           callback(true);

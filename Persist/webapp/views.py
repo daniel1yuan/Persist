@@ -4,8 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from webapp.models import User, Customer, Habit
 from django.core import serializers
 
-from models import Habit
-from helper import habits_arr
+from helper import habits_arr, arr_str
 import json
 import os
 
@@ -113,7 +112,18 @@ def create_habit(request):
   return HttpResponse(json.dumps({"success": True}))
 
 def delete_habit(request):
+  user = request.user
+  customer = user.customer
   pk = request.POST['id']
+  habit = Habit.objects.get(pk=pk)
+
+  habits = habits_arr(customer.habits)
+  index = habits.index(int(pk))
+  del(habits[index])
+  customer.habits = arr_str(habits)
+  customer.save()
+  habit.delete()
+  return HttpResponse(json.dumps({"success": True}))
 
 def change_habit(request):
   pk = request.POST['id']
