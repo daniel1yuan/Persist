@@ -39,3 +39,6 @@
 	/*INSERT  timeleft/24hrs*/
 	width: 60%;
 }
+.id-container{
+  display: none;
+}

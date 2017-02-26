@@ -30,5 +30,6 @@ input[type=submit]:hover {
     flex-direction: column;
     background-color: white;
     width: 100%;
+    display: none;
 }
 

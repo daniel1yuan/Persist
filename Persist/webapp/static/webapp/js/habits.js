@@ -90,6 +90,7 @@ function change_habit(id, params, callback){
       "description": params.description,
       "monetary_amount": params.monetary_amount,
       "end_date": params.end_date,
+      "last_clicked": params.last_clicked,
       "success_status": params.success_status,
       "charity": params.charity
     },
