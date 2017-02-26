@@ -8,6 +8,7 @@
 }
 
 .page{
+  padding-top:50px;
   display:flex;
   flex-direction:row;
   min-width:100%;
