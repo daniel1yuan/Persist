@@ -21,8 +21,30 @@ function sort_timeSince(habits){
   return sortedArray;
 }
 
+var delete_mode = false;
+
 $(document).ready(function(){
   get_all_habits(function(habits){
     test = sort_timeSince(habits);
+  });
+  
+  $("#deletebutton").click(function () {
+    if (delete_mode==false) delete_mode = true;
+    else delete_mode = false;
+    alert(delete_mode);
+  });
+
+  $("div[id^='habit']").click(function () {
+    if (delete_mode==true && confirm("Are you sure you want to delete this?")) {
+      var pk = this.id;
+      pk = pk.substring(6); 
+      delete_habit(pk,function(x){
+        if(x==false) alert("An error has occurred, please reload the page.");
+        else this.remove();
+      });
+    }
+    else {
+      return false;
+    }
   });
 });

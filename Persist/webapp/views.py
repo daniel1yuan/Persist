@@ -117,19 +117,21 @@ def create_habit(request):
   return HttpResponse(json.dumps({"success": True,"pk":habit.pk}))
 
 def delete_habit(request):
-  user = request.user
-  customer = user.customer
-  pk = request.POST['id']
-  habit = Habit.objects.get(pk=pk)
+  try:
+    user = request.user
+    customer = user.customer
+    pk = request.POST['id']
+    habit = Habit.objects.get(pk=pk)
 
-  habits = habits_arr(customer.habits)
-  index = habits.index(int(pk))
-  del(habits[index])
-  customer.habits = arr_str(habits)
-  customer.save()
-  habit.delete()
-  return HttpResponse(json.dumps({"success": True}))
-
+    habits = habits_arr(customer.habits)
+    index = habits.index(int(pk))
+    del(habits[index])
+    customer.habits = arr_str(habits)
+    customer.save()
+    habit.delete()
+    return HttpResponse(json.dumps({"success": True}))
+  except:
+    return HttpResponse(json.dumps({"success": False}))
 def change_habit(request):
   pk = request.POST['id']
   habit = Habit.objects.get(pk=pk)
