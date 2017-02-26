@@ -104,7 +104,7 @@ def create_habit(request):
   end_date = int((request.POST['end_date']))/(1000.0)
   start_date = (datetime.utcnow()-datetime(1970,1,1)).total_seconds()
   last_clicked = (datetime.utcnow()-datetime(1970,1,1)).total_seconds()
-  print end_date
+  #print end_date
   status = int(request.POST['success_status'])
   charity = int(request.POST['charity'])
   user = request.user
