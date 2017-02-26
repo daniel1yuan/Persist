@@ -1,12 +1,151 @@
 {% extends "webapp/__base.html" %}
 {% load staticfiles %}
-
 {% block extra_head %}
+  <link href="{% static 'webapp/css/home.css' %}" type="text/css" rel="stylesheet">
+  <!-- Bootstrap Core CSS -->
+  <link href="{% static 'webapp/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- Morris Charts CSS -->
+  <link href="{% static 'webapp/css/plugins/morris.css' %}" rel="stylesheet">
+  <!-- Custom Fonts -->
+  <link href="{% static 'webapp/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Strait" rel="stylesheet">
   <script src="{% static 'webapp/js/habits.js' %}"></script>
   <script src="{% static 'webapp/js/auth.js' %}"></script>
 {% endblock %}
 
 {% block content %}
-  {% include "webapp/header.html" %}
-  LSTESETASTAS
+	{% include "webapp/header.html" %}
+	<div class="content">
+		<div class="row" id="head">
+			<h1 align = "center" style="color:white;"">Person</h1>
+		</div>
+		<!--The User's Goal section-->
+	  	<!--<div class="wrapper no-gutters">-->
+  		<div class="row no-gutters is-table-row">
+
+  			<div class="col-xs-4" id="c">
+  				<div class="circle">
+  					<img src="{% static 'webapp/assets/progress_circle.png' %}" class="img-circle center-block home-img" alt="Sunset">
+  				</div>
+  			</div>
+  			<div class="col-xs-8">
+  				<div class="row">
+  						<div class="transbox">
+			  				<h1 align = "center"  >Goal Data</h1>
+							<h3  >This is some text that is placed in the transparent box.</h3>
+						</div>
+				</div>
+				<div class="row">
+  					<div class="col-xs-2" id="c">
+  						<img src="{% static 'webapp/assets/progress_circle.png' %}" class="img-circle smallhome-img" alt="Sunset">
+  					</div>	
+  					<div class="col-xs-10" id="c">
+  						<div class="transbox">
+							<h3  >This is some text that is placed in the transparent box.</h3>
+						</div>
+  					</div>	
+				</div>
+				<div class="row">
+  					<div class="col-xs-2" id="c">
+  						<img src="{% static 'webapp/assets/progress_circle.png' %}" class="img-circle small home-img" alt="Sunset">
+  					</div>	
+  					<div class="col-xs-10" id="c">
+  						<div class="transbox">
+							<h3  >This is some text that is placed in the transparent box.</h3>
+						</div>
+  					</div>	
+				</div>
+  			</div>
+  		</div>
+  		<!--The User's Statistics and Group section-->
+  		<div class="row no-gutter is-table-row">
+  			<!--The User's Statistics section-->
+	  		<div class="col-md-6">
+		  			<div class="transbox stats">
+		  					<img src="{% static 'webapp/assets/Graph.png' %}" alt="Graph" class = "home-img">
+		  				
+
+					</div>
+	  		</div>
+  		<!--The User's Group section-->
+	  		<div class="col-md-6">
+			  	<div class="transbox group">
+	  				<div class="row">
+	  					<h1 align = "center">Groups</h1>
+	  				</div>
+	  				<div class="row is-table-row">
+	  					<div class="col-xs-1 small">
+	  						<img src="{% static 'webapp/assets/Group_Icon.png' %}" class="img-circle small home-img" alt="Sunset">
+	  					</div>	
+	  					<div class="col-xs-11">
+	  						<div class="box">
+								<h3>This is some text that is placed in the transparent box.</h3>
+							</div>
+	  					</div>	
+	  				</div>
+	  				<div class="row is-table-row">
+	  					<div class="goalentry">
+		  					<div class="col-xs-1 small">
+		  						<img src="{% static 'webapp/assets/Group_Icon.png' %}" class="img-circle small home-img">
+		  					</div>	
+		  					<div class="col-xs-11">
+		  						<div class="box">
+									<h3>This is some text that is placed in the transparent box.</h3>
+								</div>
+		  					</div>
+		  				</div>		
+	  				</div>
+	  				<div class="row is-table-row">
+	  					<div class="goalentry">
+		  					<div class="col-xs-1 small">
+		  						<img src="{% static 'webapp/assets/Group_Icon.png' %}" class="img-circle small home-img">
+		  					</div>	
+		  					<div class="col-xs-11">
+		  						<div class="box">
+									<h3>This is some text that is placed in the transparent box.</h3>
+								</div>
+		  					</div>
+		  				</div>	
+	  				</div>
+	  				<div class="row is-table-row">
+	  					<div class="goalentry">
+		  					<div class="col-xs-1 small">
+		  						<img src="{% static 'webapp/assets/Group_Icon.png' %}" class="img-circle small home-img">
+		  					</div>	
+		  					<div class="col-xs-11">
+		  						<div class="box">
+									<h3>This is some text that is placed in the transparent box.</h3>
+								</div>
+		  					</div>
+		  				</div>	
+	  				</div>
+	  				<div class="row is-table-row">
+	  					<div class="goalentry">
+		  					<div class="col-xs-1 small">
+		  						<img src="{% static 'webapp/assets/Group_Icon.png' %}" class="img-circle small home-img">
+		  					</div>	
+		  					<div class="col-xs-11">
+		  						<div class="box">
+									<h3>This is some text that is placed in the transparent box.</h3>
+								</div>
+		  					</div>
+		  				</div>	
+	  				</div>
+	  				<div class="row is-table-row">
+	  					<div class="goalentry">
+		  					<div class="col-xs-1 small">
+		  						<img src="{% static 'webapp/assets/Group_Icon.png' %}" class="img-circle small home-img">
+		  					</div>	
+		  					<div class="col-xs-11">
+		  						<div class="box">
+									<h3>This is some text that is placed in the transparent box.</h3>
+								</div>
+		  					</div>
+		  				</div>	
+	  				</div>
+				</div>
+	  		</div>
+  		</div>
+	</div>	
+
 {% endblock %}
