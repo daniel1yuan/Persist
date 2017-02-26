@@ -8,12 +8,19 @@
 }
 
 .page{
+  display:flex;
+  flex-direction:row;
   min-width:100%;
   padding-top:50px;
 }
 
 .column{
   width:50%;
+  margin: 20px;
+}
+
+.column.habits{
+  margin-right: 15px;
 }
 
 .column > h1{
