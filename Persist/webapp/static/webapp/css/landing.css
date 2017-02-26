@@ -18,7 +18,7 @@ h1, h2, h3{
 	background-color: black;
 }
 .pages{
-	padding-top: 40px;
+	padding-top: 50px;
 	display: flex;
 	flex-direction: column;
 }
@@ -118,21 +118,22 @@ h1, h2, h3{
 	flex-direction: column;
 	align-items: center;
 	width: 20%;
-	padding: 100px 50px 50px 50px;
+	margin-top: 50px;
+	padding: 50px 50px 50px 50px;
 	border-radius: 20px;
 	transition: all 0.2s ease-out;
 }.profile > h3{
 	text-align: center;
 	padding: 20px 0;
 }.picture{
-	width: 200px;
-	height: 200px;
+	width: 100%;
+	height: 33%;
 	background-color: white;
 	border-radius: 100%;
 	border: 4px white solid;
 	filter:grayscale(70%);
 }.profile:hover{
-	padding-top: 50px;
+	margin-top: 0;
 	background-color: gray;
 }.profile:hover .picture{
 	filter: none;

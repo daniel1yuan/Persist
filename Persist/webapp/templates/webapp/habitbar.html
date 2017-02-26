@@ -1,0 +1,22 @@
+{% load staticfiles %}
+<link href="{% static 'webapp/css/habitbar.css' %}" type="text/css" rel="stylesheet">
+<div class="habitbar">
+	<div class="habitbartext">
+		<div class="habitbartextstreak">
+			<!-- INSERT  days survived -->
+			<h1>30</h1>
+		</div>
+		<div class="habitbartextname">
+			<!-- INSERT  habit name-->
+			<h1>Don't smoke</h1>
+		</div>
+		<div class="habitbartextmoney">
+			<!-- INSERT  pledge amount -->
+			<h1>$10</h1>
+		</div>
+	</div>
+	<!-- INSERT an id called complete if this is complete for the day -->
+	<div class="habitbartimeleftbackground">
+		<div class="habitbartimeleftforeground"></div>
+	</div>
+</div>
