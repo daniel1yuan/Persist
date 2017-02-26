@@ -5,7 +5,7 @@ from webapp.models import User, Customer, Habit
 from django.core import serializers
 from django.views.decorators.csrf import csrf_exempt
 
-from helper import habits_arr, arr_str
+from webapp.helper import habits_arr, arr_str
 import json
 import os
 
