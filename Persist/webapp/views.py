@@ -102,14 +102,13 @@ def create_habit(request):
   user = request.user
   if (not user.is_authenticated()):
     return HttpResponse(json.dumps({"success": False}))
-
   habit = Habit(name=name,description=description,monetary_amount=monetary_amount,end_date=end_date,status=status,charity=charity,user=user)
   habit.save()
   print user.customer.habits
   user.customer.habits += "," + str(habit.pk)
   print user.customer.habits
   user.customer.save()
-  return HttpResponse(json.dumps({"success": True}))
+  return HttpResponse(json.dumps({"success": True,"pk":habit.pk}))
 
 def delete_habit(request):
   user = request.user
@@ -131,12 +130,30 @@ def change_habit(request):
   if habit is None:
     return HttpResponse(json.dumps({"success": False})) 
   else:
-    habit.name = request.POST['name']
-    habit.description = request.POST['description']
-    habit.monetary_amount = request.POST['monetary_amount']
-    habit.end_date = request.POST['end_date']
-    habit.status = request.POST['success_status']
-    habit.charity = request.POST['charity']
+    try:
+      habit.name = request.POST['name']
+    except:
+      habit.name = habit.name
+    try:
+      habit.description = request.POST['description']
+    except:
+      habit.description = habit.description
+    try:
+      habit.monetary_amount = request.POST['monetary_amount']
+    except:
+      habit.monetary_amount = habit.monetary_amount
+    try:
+      habit.tend_date = request.POST['end_date']
+    except:
+      habit.end_date = habit.end_date
+    try:
+      habit.status = request.POST['success_status']
+    except:
+      habit.status = habit.status
+    try:
+      habit.charity = request.POST['charity']
+    except:
+      habit.charity = habit.charity
     habit.save()
     return HttpResponse(json.dumps({"success": True}))
 

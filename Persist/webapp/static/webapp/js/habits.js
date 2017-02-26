@@ -34,11 +34,11 @@ function create_habit(params, callback) {
       res = JSON.parse(res);
       if (res.success) {
         if (callback){
-          callback(true);
+          callback(res.pk);
         }
       }else{
         if (callback){
-          callback(false);
+          callback(-1);
         }
       }
     }
