@@ -3,6 +3,7 @@ from django.http import Http404, JsonResponse, HttpResponseForbidden, HttpRespon
 from django.contrib.auth import authenticate, login, logout
 from webapp.models import User, Customer, Habit
 from django.core import serializers
+from django.views.decorators.csrf import csrf_exempt
 
 from helper import habits_arr, arr_str
 import json
@@ -34,6 +35,7 @@ def login_page(request):
   return render(request, 'webapp/login.html', context)
 
 #Authentication Views
+@csrf_exempt
 def login_user(request):
   username = request.POST['username']
   password = request.POST['password']
@@ -48,6 +50,7 @@ def logout_user(request):
   logout(request)
   return HttpResponse(json.dumps({"success": True}))
 
+@csrf_exempt
 def add_user(request):
   username = request.POST['username']
   password = request.POST['password']
