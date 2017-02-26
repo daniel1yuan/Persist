@@ -13,33 +13,30 @@ function get_habit(id, callback) {
 		success: function(res) {
       var parsed = JSON.parse(res);
       if (callback) {
-        callback(parsed.fields);
+        callback(parsed);
       }
     }
 	});
 }
-/*
-function create_habit(name,description,monetary_amount,start_date,end_date,success_status,charity){
+
+function get_all_habits(callback) {
   var csrftoken = getCookie('csrftoken');
   $.ajax({
     type: "POST",
-    url: "/_create_habit/",
+    url: "/_get_all_habits/",
     data: {
-      "csrfmiddlewaretoken": csrftoken,
-      "name": name,
-      "description": description,
-      "monetary_amount": monetary_amount,
-      "start_date": start_date,
-      "end_date": end_date,
-      "success_status": success_status,
-      "charity": charity
+      "csrfmiddlewaretoken": csrftoken
     },
     success: function(res) {
-      res = JSON.parse(res);
-      if (res.success) {
-        return true;
+      var parsed = JSON.parse(res);
+      for (var idx in parsed) {
+        tmp = JSON.parse(parsed[idx])
+        console.log(tmp)
+        parsed[idx] = tmp
       }
-      return false;
+      if (callback) {
+        callback(parsed);
+      }
     }
-  }
-}*/
+  });
+}

@@ -5,8 +5,10 @@ from webapp.models import User, Customer, Habit
 from django.core import serializers
 
 from models import Habit
+from helper import habits_arr
 import json
 import os
+
 
 # Create your views here.
 def index(request):
@@ -82,25 +84,22 @@ def is_logged_in(request):
 def get_habit(request):
   habit_id = int(request.POST['habit_id'])
   try:
-    habit_obj = Habit.objects.get(id=habit_id)
+    habit_obj = Habit.objects.get(pk=habit_id)
     habit_serial = serializers.serialize('json', [habit_obj])
     #[1:-1] to remove brackets?
     return HttpResponse(json.dumps(habit_serial[1:-1]), content_type='application/json')
   except Habit.DoesNotExist:
     return HttpResponse(json.dumps({"pk": -1}))
-
-def create_habit(request):
-  name = request.POST['name']
-  description = request.POST['description']
-  monetary_amount = int(request.POST['monetary_amount'])
-  start_date = request.POST['start_date']
-  end_date = request.POST['end_date']
-  status = int(request.POST['success_status'])
-  charity = int(request.POST['charity'])
-  user = request.user()
-  if (not user.is_authenticated()):
+def get_all_habits(request):
+  if request.user.is_authenticated():
+    habits = habits_arr(request.user.customer.habits)
+    print habits 
+    json_dict = {}
+    for idx in habits:
+      cur_habit = Habit.objects.get(pk=idx)
+      cur_serial = serializers.serialize('json',[cur_habit])[1:-1]
+      print cur_serial
+      json_dict[idx] = cur_serial
+    return HttpResponse(json.dumps(json_dict))
+  else:
     return HttpResponse(json.dumps({"success": False}))
-
-  habit = Habit.objects.create_user(name=name,description=description,monetary_amount=monetary_amount,start_date=start_date,end_date=end_date,status=status,charity=charity,user=user)
-  habit.save()
-  return HttpResponse(json.dumps({"success": True}))
