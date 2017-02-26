@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from webapp.models import User, Customer, Habit
 from django.core import serializers
 
-from helper import habits_arr, arr_str
+from webapp.helper import habits_arr, arr_str
 import json
 import os
 
@@ -104,9 +104,9 @@ def create_habit(request):
     return HttpResponse(json.dumps({"success": False}))
   habit = Habit(name=name,description=description,monetary_amount=monetary_amount,end_date=end_date,status=status,charity=charity,user=user)
   habit.save()
-  print user.customer.habits
+  #print user.customer.habits
   user.customer.habits += "," + str(habit.pk)
-  print user.customer.habits
+  #print user.customer.habits
   user.customer.save()
   return HttpResponse(json.dumps({"success": True,"pk":habit.pk}))
 
@@ -160,12 +160,12 @@ def change_habit(request):
 def get_all_habits(request):
   if request.user.is_authenticated():
     habits = habits_arr(request.user.customer.habits)
-    print habits 
+    #print habits 
     json_dict = {}
     for idx in habits:
       cur_habit = Habit.objects.get(pk=idx)
       cur_serial = serializers.serialize('json',[cur_habit])[1:-1]
-      print cur_serial
+      #print cur_serial
       json_dict[idx] = cur_serial
     return HttpResponse(json.dumps(json_dict))
   else:
