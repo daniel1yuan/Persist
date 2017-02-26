@@ -19,28 +19,33 @@ function get_habit(id, callback) {
 		}
 	});
 }
-/*
-function create_habit(name,description,monetary_amount,start_date,end_date,success_status,charity){
+
+function create_habit(params, callback){
   var csrftoken = getCookie('csrftoken');
   $.ajax({
     type: "POST",
     url: "/_create_habit/",
     data: {
       "csrfmiddlewaretoken": csrftoken,
-      "name": name,
-      "description": description,
-      "monetary_amount": monetary_amount,
-      "start_date": start_date,
-      "end_date": end_date,
-      "success_status": success_status,
-      "charity": charity
+      "name": params.name,
+      "description": params.description,
+      "monetary_amount": params.monetary_amount,
+      "start_date": params.start_date,
+      "end_date": params.end_date,
+      "success_status": params.success_status,
+      "charity": params.charity
     },
     success: function(res) {
       res = JSON.parse(res);
       if (res.success) {
-        return true;
+        if (callback){
+          callback(true);
+        }
+      }else{
+        if (callback){
+          callback(false);
+        }
       }
-      return false;
     }
-  }
-}*/
+  });
+}
