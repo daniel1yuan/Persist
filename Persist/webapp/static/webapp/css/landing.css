@@ -2,57 +2,137 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	/*border: black solid 1px;*/
+	 user-select: none;
+}
 
+h1, h2, h3{
+	font-family: 'Oswald', sans-serif;
+}
+h1{
+	text-transform: uppercase;
+}
+p{
+	font-family: 'Roboto Slab', serif;
 }
 
 .content{
-	display: flex;
-	width: 100%;
-	flex-direction: column;
 	background-color: black;
-	flex-wrap: wrap;
 }
-
+.pages{
+	padding-top: 40px;
+	display: flex;
+	flex-direction: column;
+}
 .page{
-	padding: 350px 0;
+	background-color: black;
+}
+.pagecontent{
+	margin: 50px;
+	height: 800px;
+	display: flex;
+	border-radius: 50px 50px;
+	color: white;
+}.pagetitlebox{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 30%;
+	margin: 50px;
+	font-size: 200px;
+	letter-spacing: 50px;
+}.pagetitlebox > h1{
+	font-size: 150px;
+	letter-spacing: 50px;
+	text-align: center;
 }
 
 .page.first{
-
- 	background-color: gray;
- 	color: navy;
-}
-
-.page.first > h1{
-	font-family: 'Strait', sans-serif;
-	font-size: 180px;
+ 	background-image: url("../assets/sunset.jpg");
+ 	background-position: center;
+ 	background-repeat: no-repeat;
+}.pagecontent.first{
 	text-align: center;
-	margin : 0;
+	flex-direction: column;
+	justify-content: center;
+	border: solid 4px white;
+}.first > h1{
+	font-size: 200px;
+	letter-spacing: 50px;
+}#motto{
+	font-size: 20px;
+	text-transform: lowercase;
+	letter-spacing: 15px;
 }
-
-.page.first > h3{
-	font-size: 30px;
-	text-align: center;
-}
-
 
 .page.second{
-	padding: 30px;
-	display: flex;
+	background: #000022;
+}.pagecontent.second{
 	flex-direction: row;
-	background-color: green;
-	border: black 1px solid;
-	flex-wrap: wrap;
+	justify-content: center;
+}.desc_stats{
+	margin: 50px 50px 50px 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: top;
+	align-items: center;
+	width: 60%;
+}.desc_stats > p{
+	font-size: 20px;
+	letter-spacing: 5px;
+	line-height: 70px
+}.desc_stats > h2{
+	font-size: 30px;
+	letter-spacing: 20px;
+}.desc_stats > img{
+	width: 450px;
+	height: 450px;
+	margin: 20px 0;
+}span.graphvalue1{
+ 	color: red;
+}span.graphvalue2{
+ 	color: blue;
 }
 
-.page.second > p{
-	width: 30%;
-	font-size: 3rem;
-	text-align: left;
-	border: black 1px solid;
+
+.page.third{
+	background: #696969;
+}.pagecontent.third{
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+}.graph-desc{
+	text-align: center;
+}.graph-desc > img{
+	width: 400px;
+	height: 400px;
+	margin: 20px 0;
 }
 
-.graph{
-	width: 30%;
-	border: black 1px solid;
+
+.page.fourth{
+	background: #222200;
+}.pagecontent.fourth{
+	flex-direction: row-reverse;
+	justify-content: space-between;
+}.profile{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 300px;
+	padding: 50px;
+	border-radius: 20px;
+	transition: all 0.2s ease-out;
+}.profile:hover{
+	background-color: gray;
+}.profile > h3{
+	text-align: center;
+	padding: 20px 0;
+}.profile > p{
+}.pictureplaceholder{
+	width: 200px;
+	height: 200px;
+	background-color: black;
+	border-radius: 100%;
 }

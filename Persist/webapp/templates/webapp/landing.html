@@ -1,9 +1,16 @@
 {% extends "webapp/__base.html" %}
 {% load staticfiles %}
-
 {% block extra_head %}
+<link href="{% static 'webapp/css/landing.css' %}" type="text/css" rel="stylesheet">
 {% endblock %}
-
 {% block content %}
-  {% include "webapp/header.html" %}
+	<div class="content">
+		{% include "webapp/header.html" %}
+		<div class="pages">
+			{% include "webapp/landing_one.html" %}
+			{% include "webapp/landing_two.html" %}
+		  	{% include "webapp/landing_three.html" %}
+		  	{% include "webapp/landing_four.html" %}
+		</div>
+	</div>
 {% endblock %}
