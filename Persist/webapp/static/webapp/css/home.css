@@ -17,11 +17,10 @@
 
 .column{
   width:50%;
-  margin: 20px;
 }
 
 .column.habits{
-  margin-right: 15px;
+  background-color: #F4F0CB;
 }
 
 .column > h1{
