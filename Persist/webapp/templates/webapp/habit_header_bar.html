@@ -1,11 +1,12 @@
+{% load staticfiles %}
 <div class = "habit-header-bar">
-	<a href="#" class="btn btn-info btn-lg" id="habit-menu">
-        <span class="glyphicon glyphicon-th-list"></span>
-    </a>
+	<button type="button"  id="addbutton">
+			<img src="{% static 'webapp/assets/minus-50.png' %}" class="addbuttonimg">
+        </button>
     <div class="header-wrapper">
     	<h1>Habits</h1>
     </div>
-    <a href="#" class="btn btn-info btn-lg" id="habit-add">
-        <span class="glyphicon glyphicon-plus-sign"></span>
-    </a>
+        <button type="button"  id="deletebutton">
+			<img src="{% static 'webapp/assets/plus-50.png' %}" class="deletebuttonimg">
+        </button>
 </div>

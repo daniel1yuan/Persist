@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<link href="{% static 'webapp/css/habitform.css' %}" type="text/css" rel="stylesheet">
+<div class="habitform">
+  <form class="habitformform">
+    <label for="name">Habit</label>
+    <input type="text" id="name" name="Name" required>
+
+    <label for="desc">Description</label>
+    <input type="text" id="desc" name="Desc" required>
+
+    <label for="date" required>Date</label>
+    <input type="date" min="2016-02-26" id="date" name="Date" required>
+
+    <label for="charity">Charity</label>
+    <select id="charity" name="Charity" required>
+      <option disabled selected hidden value="">Select a charity</option>
+      <option value="0">Cancer Research</option>
+      <option value="1">Habitat For Humanity</option>
+      <option value="2">Planned Parenthood</option>
+    </select>
+    <label for="pledge_amount">Pledge Amount (USD)</label>
+    <input type="number" id="pledge_amount" name="Pledge_amount" min="5" value="5" required>
+    <input type="submit" value="Submit">
+  </form>
+</div>
