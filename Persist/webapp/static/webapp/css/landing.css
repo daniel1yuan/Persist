@@ -1,18 +1,16 @@
 *{
 	padding: 0;
 	margin: 0;
-	box-sizing: border-box;
+	/*box-sizing: border-box;*/
 	/*border: black solid 1px;*/
 	 user-select: none;
 }
 
 h1, h2, h3{
 	font-family: 'Oswald', sans-serif;
-}
-h1{
+}h1{
 	text-transform: uppercase;
-}
-p{
+}p{
 	font-family: 'Roboto Slab', serif;
 }
 
@@ -31,7 +29,7 @@ p{
 	margin: 50px;
 	height: 800px;
 	display: flex;
-	border-radius: 50px 50px;
+	border-radius: 50px;
 	color: white;
 }.pagetitlebox{
 	display: flex;
@@ -66,10 +64,11 @@ p{
 }
 
 .page.second{
-	background: #000022;
+	background-color: black;
 }.pagecontent.second{
 	flex-direction: row;
 	justify-content: center;
+
 }.desc_stats{
 	margin: 50px 50px 50px 0;
 	display: flex;
@@ -89,14 +88,13 @@ p{
 	height: 450px;
 	margin: 20px 0;
 }span.graphvalue1{
- 	color: red;
+ 	/*color: red;*/
 }span.graphvalue2{
- 	color: blue;
+ 	/*color: blue;*/
 }
 
-
 .page.third{
-	background: #696969;
+	background-color: black;
 }.pagecontent.third{
 	flex-direction: row;
 	justify-content: space-around;
@@ -110,9 +108,8 @@ p{
 	margin: 20px 0;
 }
 
-
 .page.fourth{
-	background: #222200;
+	background-color: black;
 }.pagecontent.fourth{
 	flex-direction: row-reverse;
 	justify-content: space-between;
@@ -120,19 +117,23 @@ p{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 300px;
-	padding: 50px;
+	width: 20%;
+	padding: 100px 50px 50px 50px;
 	border-radius: 20px;
 	transition: all 0.2s ease-out;
-}.profile:hover{
-	background-color: gray;
 }.profile > h3{
 	text-align: center;
 	padding: 20px 0;
-}.profile > p{
-}.pictureplaceholder{
+}.picture{
 	width: 200px;
 	height: 200px;
-	background-color: black;
+	background-color: white;
 	border-radius: 100%;
+	border: 4px white solid;
+	filter:grayscale(70%);
+}.profile:hover{
+	padding-top: 50px;
+	background-color: gray;
+}.profile:hover .picture{
+	filter: none;
 }
