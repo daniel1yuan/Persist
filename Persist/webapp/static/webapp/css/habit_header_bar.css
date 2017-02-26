@@ -51,3 +51,8 @@
 	flex-direction: column;
 	justify-content: center;
 }
+
+#header-wrapper{
+
+	font-size:50px;
+}

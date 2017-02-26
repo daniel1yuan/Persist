@@ -14,6 +14,7 @@
   <!-- Custom Fonts -->
   <link href="{% static 'webapp/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Strait" rel="stylesheet">
+  <link href="{% static 'webapp/css/habitbar.css' %}" type="text/css" rel="stylesheet">
 
   <!-- Javascript files -->
   <script src="{% static 'webapp/js/habits.js' %}"></script>
@@ -27,43 +28,28 @@
 		{% include "webapp/header.html" %}
 		{% include "webapp/habitform.html" %}
 		<div class="page">
-			<div class="column">
-				<h1>Jishnu Datta</h1>
+			<div class="column reg">
+				<h1 id="username"></h1>
 				<div class = "section-container day-streak">
-					<div class="streak">
-						<h1>33</h1>
+					<div class="streak">	
+						<h1 id = "beststreak"></h1>
 					</div>
 					<div class="day">
 						<h1>Days into not pooping!</h1>
 					</div>
 				</div>
 				<div class = "section-container">
-					<h1>Top Overall Persistence</h1>
+					<h1 id="Top-Persistence">Top Overall Persistence</h1>
 					<img src="{% static 'webapp/assets/Graph.png' %}">
 				</div>
 				<div class = "section-container">
-					<h1>Average Persistence</h1>
-					<img src="{% static 'webapp/assets/placeholdergraph.png' %}">
+					<h1 id="avg-persistence">Average Persistence</h1>
+					<img src="{% static 'webapp/assets/email_graph.jpg' %}">
 				</div>
 			</div>
-			<div class="column habits">
+			<div class="column habits" id= "habit-container">
 				<div class = "section-container" id="habitstatus">
 					{% include "webapp/habit_header_bar.html" %}
-				</div>
-				<div class = "section-container">
-					{% include "webapp/habitbar.html" %}
-				</div>
-				<div class = "section-container">
-					{% include "webapp/habitbar.html" %}
-				</div>
-				<div class = "section-container">
-					{% include "webapp/habitbar.html" %}
-				</div>
-				<div class = "section-container">
-					{% include "webapp/habitbar.html" %}
-				</div>
-				<div class = "section-container">
-					{% include "webapp/habitbar.html" %}
 				</div>
 			</div>
 		</div>

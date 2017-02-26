@@ -147,3 +147,23 @@ function auth(callback){
   });  
 }
 
+function get_user(callback){
+  $.ajax({
+    type: "GET",
+    url: "/_get_username/",
+    success: function(res){
+      res = JSON.parse(res);
+      if (res.success){
+        //Someone is logged in , return true
+        if (callback){
+          callback(res.username);
+        }
+      }else{
+        //No one is logged in, return false
+        if (callback){
+          callback(null);
+        }
+      }
+    }
+  });   
+}
