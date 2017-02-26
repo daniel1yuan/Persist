@@ -59,7 +59,7 @@ function signup(username, password, callback){
     type: "POST",
     url: "/_adduser/",
     data: {
-      "crsfmiddelwaretoken": csrftoken,
+      "csrfmiddlewaretoken": csrftoken,
       "username": username,
       "password": password
     },
@@ -68,7 +68,7 @@ function signup(username, password, callback){
       if (res.success){
         //If signup is successful sign them in
         if (callback){
-          callback;
+          callback();
         } 
         login(username, password);
       }else{
@@ -106,7 +106,7 @@ function deluser(username, callback){
   $.ajax({
     type: "POST",
     url: "/_deluser/",
-    data: {i
+    data: {
       "csrfmiddlewaretoken": csrftoken,
       "username": username,
     },

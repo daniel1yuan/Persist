@@ -51,6 +51,8 @@ def add_user(request):
   username = request.POST['username']
   password = request.POST['password']
   user = User.objects.create_user(username=username, password=password)
+  customer = Customer(user=user, habits="")
+  customer.save()
   user.save()
   return HttpResponse(json.dumps({"success": True}))
   
@@ -96,14 +98,36 @@ def create_habit(request):
   name = request.POST['name']
   description = request.POST['description']
   monetary_amount = int(request.POST['monetary_amount'])
-  start_date = request.POST['start_date']
   end_date = request.POST['end_date']
   status = int(request.POST['success_status'])
   charity = int(request.POST['charity'])
-  user = request.user()
+  user = request.user
   if (not user.is_authenticated()):
     return HttpResponse(json.dumps({"success": False}))
 
-  habit = Habit.objects.create_user(name=name,description=description,monetary_amount=monetary_amount,start_date=start_date,end_date=end_date,status=status,charity=charity,user=user)
+  habit = Habit(name=name,description=description,monetary_amount=monetary_amount,end_date=end_date,status=status,charity=charity,user=user)
   habit.save()
+  print user.customer.habits
+  user.customer.habits += "," + str(habit.pk)
+  print user.customer.habits
+  user.customer.save()
   return HttpResponse(json.dumps({"success": True}))
+
+def delete_habit(request):
+  pk = request.POST['id']
+
+def change_habit(request):
+  pk = request.POST['id']
+  habit = Habit.objects.get(pk=pk)
+  if habit is None:
+    return HttpResponse(json.dumps({"success": False})) 
+  else:
+    habit.name = request.POST['name']
+    habit.description = request.POST['description']
+    habit.monetary_amount = request.POST['monetary_amount']
+    habit.end_date = request.POST['end_date']
+    habit.status = request.POST['success_status']
+    habit.charity = request.POST['charity']
+    habit.save()
+    return HttpResponse(json.dumps({"success": True}))
+

@@ -30,7 +30,36 @@ function create_habit(params, callback){
       "name": params.name,
       "description": params.description,
       "monetary_amount": params.monetary_amount,
-      "start_date": params.start_date,
+      "end_date": params.end_date,
+      "success_status": params.success_status,
+      "charity": params.charity
+    },
+    success: function(res) {
+      res = JSON.parse(res);
+      if (res.success) {
+        if (callback){
+          callback(true);
+        }
+      }else{
+        if (callback){
+          callback(false);
+        }
+      }
+    }
+  });
+}
+
+function change_habit(id, params, callback){
+  var csrftoken = getCookie('csrftoken');
+  $.ajax({
+    type: "POST",
+    url: "/_change_habit/",
+    data: {
+      "csrfmiddlewaretoken": csrftoken,
+      "id": id,
+      "name": params.name,
+      "description": params.description,
+      "monetary_amount": params.monetary_amount,
       "end_date": params.end_date,
       "success_status": params.success_status,
       "charity": params.charity
