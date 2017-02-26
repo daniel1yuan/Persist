@@ -1,23 +1,19 @@
 {% extends "webapp/__base.html" %}
 {% load staticfiles %}
 {% block extra_head %}
-<link href="{% static 'webapp/css/home.css' %}" type="text/css" rel="stylesheet">
-<!-- Bootstrap Core CSS -->
-<link href="{% static 'webapp/css/bootstrap.min.css' %}" rel="stylesheet">
-<!-- Morris Charts CSS -->
-<link href="{% static 'webapp/css/plugins/morris.css' %}" rel="stylesheet">
-<!-- Custom Fonts -->
-<link href="{% static 'webapp/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-
-<link href="https://fonts.googleapis.com/css?family=Strait" rel="stylesheet">
+  <link href="{% static 'webapp/css/home.css' %}" type="text/css" rel="stylesheet">
+  <!-- Bootstrap Core CSS -->
+  <link href="{% static 'webapp/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- Morris Charts CSS -->
+  <link href="{% static 'webapp/css/plugins/morris.css' %}" rel="stylesheet">
+  <!-- Custom Fonts -->
+  <link href="{% static 'webapp/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Strait" rel="stylesheet">
   <script src="{% static 'webapp/js/habits.js' %}"></script>
   <script src="{% static 'webapp/js/auth.js' %}"></script>
   <script src="{% static 'webapp/js/habits.js' %}"></script>  
 {% endblock %}
 
-<script type="text/javascript" src="{% static 'webapp/js/home.js' %}"></script>
-
-{% endblock %}
 {% block content %}
 	{% include "webapp/header.html" %}
 	<div class="content">
@@ -30,7 +26,7 @@
 
   			<div class="col-xs-4" id="c">
   				<div class="circle">
-  					<img src="{% static 'webapp/assets/progress_circle.png' %}" class="img-circle center-block" alt="Sunset">
+  					<img src="{% static 'webapp/assets/progress_circle.png' %}" class="img-circle center-block home-img" alt="Sunset">
   				</div>
   			</div>
   			<div class="col-xs-8">
@@ -42,7 +38,7 @@
 				</div>
 				<div class="row">
   					<div class="col-xs-2" id="c">
-  						<img src="{% static 'webapp/assets/progress_circle.png' %}" class="img-circle small" alt="Sunset">
+  						<img src="{% static 'webapp/assets/progress_circle.png' %}" class="img-circle smallhome-img" alt="Sunset">
   					</div>	
   					<div class="col-xs-10" id="c">
   						<div class="transbox">
@@ -52,7 +48,7 @@
 				</div>
 				<div class="row">
   					<div class="col-xs-2" id="c">
-  						<img src="{% static 'webapp/assets/progress_circle.png' %}" class="img-circle small" alt="Sunset">
+  						<img src="{% static 'webapp/assets/progress_circle.png' %}" class="img-circle small home-img" alt="Sunset">
   					</div>	
   					<div class="col-xs-10" id="c">
   						<div class="transbox">
@@ -67,7 +63,7 @@
   			<!--The User's Statistics section-->
 	  		<div class="col-md-6">
 		  			<div class="transbox stats">
-		  					<img src="{% static 'webapp/assets/Graph.png' %}" alt="Graph">
+		  					<img src="{% static 'webapp/assets/Graph.png' %}" alt="Graph" class = "home-img">
 		  				
 
 					</div>
@@ -80,7 +76,7 @@
 	  				</div>
 	  				<div class="row is-table-row">
 	  					<div class="col-xs-1 small">
-	  						<img src="{% static 'webapp/assets/Group_Icon.png' %}" class="img-circle small" alt="Sunset">
+	  						<img src="{% static 'webapp/assets/Group_Icon.png' %}" class="img-circle small home-img" alt="Sunset">
 	  					</div>	
 	  					<div class="col-xs-11">
 	  						<div class="box">
@@ -91,7 +87,7 @@
 	  				<div class="row is-table-row">
 	  					<div class="goalentry">
 		  					<div class="col-xs-1 small">
-		  						<img src="{% static 'webapp/assets/Group_Icon.png' %}" class="img-circle small">
+		  						<img src="{% static 'webapp/assets/Group_Icon.png' %}" class="img-circle small home-img">
 		  					</div>	
 		  					<div class="col-xs-11">
 		  						<div class="box">
@@ -103,7 +99,7 @@
 	  				<div class="row is-table-row">
 	  					<div class="goalentry">
 		  					<div class="col-xs-1 small">
-		  						<img src="{% static 'webapp/assets/Group_Icon.png' %}" class="img-circle small">
+		  						<img src="{% static 'webapp/assets/Group_Icon.png' %}" class="img-circle small home-img">
 		  					</div>	
 		  					<div class="col-xs-11">
 		  						<div class="box">
@@ -115,7 +111,7 @@
 	  				<div class="row is-table-row">
 	  					<div class="goalentry">
 		  					<div class="col-xs-1 small">
-		  						<img src="{% static 'webapp/assets/Group_Icon.png' %}" class="img-circle small">
+		  						<img src="{% static 'webapp/assets/Group_Icon.png' %}" class="img-circle small home-img">
 		  					</div>	
 		  					<div class="col-xs-11">
 		  						<div class="box">
@@ -127,7 +123,7 @@
 	  				<div class="row is-table-row">
 	  					<div class="goalentry">
 		  					<div class="col-xs-1 small">
-		  						<img src="{% static 'webapp/assets/Group_Icon.png' %}" class="img-circle small">
+		  						<img src="{% static 'webapp/assets/Group_Icon.png' %}" class="img-circle small home-img">
 		  					</div>	
 		  					<div class="col-xs-11">
 		  						<div class="box">
@@ -139,7 +135,7 @@
 	  				<div class="row is-table-row">
 	  					<div class="goalentry">
 		  					<div class="col-xs-1 small">
-		  						<img src="{% static 'webapp/assets/Group_Icon.png' %}" class="img-circle small">
+		  						<img src="{% static 'webapp/assets/Group_Icon.png' %}" class="img-circle small home-img">
 		  					</div>	
 		  					<div class="col-xs-11">
 		  						<div class="box">

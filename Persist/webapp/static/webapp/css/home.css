@@ -84,7 +84,7 @@ div.box {
     min-height: 100%;
 }
 
-img{
+.home-img{
   margin: 30px;
   object-fit: contain;
   width: 90%;
