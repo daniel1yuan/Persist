@@ -14,4 +14,5 @@ urlpatterns = [
   url(r'^_get_habit/$', views.get_habit, name='get_habit'),
   url(r'^_create_habit/$', views.create_habit, name='create_habit'),
   url(r'^_change_habit/$', views.change_habit, name='change_habit'),
+  url(r'^_get_all_habits/$', views.get_all_habits, name='get_all_habits')
 ]

@@ -1,8 +1,7 @@
-function test() {
-  console.log('habitjs included');
+function test(x) {
+  console.log(x);
 }
 function get_habit(id, callback) {
-  console.log("sending get_habit post");
   var csrftoken = getCookie('csrftoken');
   $.ajax({
 		type: "POST",
@@ -12,21 +11,22 @@ function get_habit(id, callback) {
       "habit_id": id
 		},
 		success: function(res) {
-			console.log("got response");
       var parsed = JSON.parse(res);
-      debugger;
-				return parsed;
-		}
+      if (callback) {
+        callback(parsed);
+      }
+    }
 	});
 }
-
-function create_habit(params, callback){
+  
+function create_habit(callback) {
   var csrftoken = getCookie('csrftoken');
   $.ajax({
     type: "POST",
-    url: "/_create_habit/",
+    url: "/_create_habits/",
     data: {
       "csrfmiddlewaretoken": csrftoken,
+      "id": id,
       "name": params.name,
       "description": params.description,
       "monetary_amount": params.monetary_amount,
@@ -44,6 +44,28 @@ function create_habit(params, callback){
         if (callback){
           callback(false);
         }
+      }
+    }
+  });
+}
+
+function get_all_habits(callback) {
+  var csrftoken = getCookie('csrftoken');
+  $.ajax({
+    type: "POST",
+    url: "/_get_all_habits/",
+    data: {
+      "csrfmiddlewaretoken": csrftoken,
+    },
+    success: function(res) {
+      var parsed = JSON.parse(res);
+      for (var idx in parsed) {
+        tmp = JSON.parse(parsed[idx])
+        console.log(tmp)
+        parsed[idx] = tmp
+      }
+      if (callback) {
+        callback(parsed);
       }
     }
   });
