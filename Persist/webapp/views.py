@@ -5,7 +5,6 @@ from django.contrib.auth import authenticate, login, logout
 from webapp.models import User, Customer, Habit
 from django.core import serializers
 
-from models import Habit
 import json
 import os
 
