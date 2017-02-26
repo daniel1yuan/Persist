@@ -2,6 +2,7 @@ function test() {
   console.log('habitjs included');
 }
 function get_habit(id, callback) {
+  console.log("sending get_habit post");
   var csrftoken = getCookie('csrftoken');
   $.ajax({
 		type: "POST",
@@ -11,11 +12,10 @@ function get_habit(id, callback) {
       "habit_id": id
 		},
 		success: function(res) {
-			res = JSON.parse(res);
-			if (res.success) {
-				return res;
-			}
-			return null;
+			console.log("got response");
+      var parsed = JSON.parse(res);
+      debugger;
+				return parsed;
 		}
 	});
 }

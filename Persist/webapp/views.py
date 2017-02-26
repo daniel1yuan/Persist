@@ -80,16 +80,17 @@ def is_logged_in(request):
   return HttpResponse(json.dumps({"success": False}))
 
 def get_habit(request):
-  print "ABCDEFGHIJK"
   habit_id = int(request.POST['habit_id'])
   try:
     habit_obj = Habit.objects.get(id=habit_id)
-    habit_obj["success"] = True 
     habit_serial = serializers.serialize('json', [habit_obj])
     #[1:-1] to remove brackets?
-    return HttpResponse(habit_serial[1:-1], mimetype='application/json')
+    print habit_serial
+    print "RETURNING HABIT"
+    return HttpResponse(json.dumps(habit_serial[1:-1]), content_type='application/json')
+    #return HttpResponse(json.dumps({"success": True}))
   except Habit.DoesNotExist:
-    return HttpResponse(json.dumps({"success": False}))
+    return HttpResponse(json.dumps({"pk": -1}))
 
 def create_habit(request):
   name = request.POST['name']
