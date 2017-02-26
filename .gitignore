@@ -1,5 +1,4 @@
 *.pyc
 Persist/webapp/migrations/*
 Persist/webapp/migrations/0*
-Persist/db.sqlite3
 *~
