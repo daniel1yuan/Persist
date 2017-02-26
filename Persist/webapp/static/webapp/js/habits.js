@@ -8,8 +8,13 @@ function get_habit(id, callback) {
       "habit_id": id
 		},
 		success: function(res) {
-      var parsed = JSON.parse(res);
       if (callback) {
+        id = JSON.parse(res).pk;
+        var parsed = JSON.parse(res).fields;
+        parsed["id"] = id;
+        parsed.start_date = new Date(parsed.start_date*1000);
+        parsed.end_date = new Date(parsed.end_date*1000);
+        parsed.last_clicked = new Date(parsed.last_clicked*1000);
         callback(parsed);
       }
     }
@@ -26,7 +31,7 @@ function create_habit(params, callback) {
       "name": params.name,
       "description": params.description,
       "monetary_amount": params.monetary_amount,
-      "end_date": params.end_date,
+      "end_date": params.end_date.getTime(),
       "success_status": params.success_status,
       "charity": params.charity
     },
@@ -56,9 +61,12 @@ function get_all_habits(callback) {
     success: function(res) {
       var parsed = JSON.parse(res);
       for (var idx in parsed) {
-        tmp = JSON.parse(parsed[idx]);
+        tmp = JSON.parse(parsed[idx])
         parsed[idx] = tmp.fields;
-        parsed[idx]["id"] = tmp.pk;
+        parsed[idx].id = tmp.pk;
+        parsed[idx].start_date = new Date(parsed[idx].start_date*1000);
+        parsed[idx].end_date = new Date(parsed[idx].end_date*1000);
+        parsed[idx].last_clicked = new Date(parsed[idx].last_clicked*1000);
       }
       if (callback) {
         callback(parsed);
