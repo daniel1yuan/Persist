@@ -4,6 +4,7 @@
 	flex-direction: column;
 	height: 100px;
 	margin-bottom:15px;
+	border-color:rgba(0,0,0,0);
 }.habitbartext{
 	display: flex;
 	flex-direction: row;
@@ -11,7 +12,6 @@
 	width: 100%;
 	text-align: center;
 	height: 90%;
-	border: 1px white solid;
 	border-bottom: none;
 }.habitbartextstreak{
 	width: 15%;

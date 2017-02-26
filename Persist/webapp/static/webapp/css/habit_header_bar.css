@@ -1,0 +1,32 @@
+* {
+  border-radius: 0 !important;
+}
+
+.habit-header-bar{
+	display:flex;
+	flex-direction: row;
+	width:100%;
+	margin-bottom:20px;
+}
+
+#habit-menu{
+	display:flex;
+	flex-direction:column;
+	width:15%;
+	background-color:black;
+	border-color:rgba(0,0,0,0);
+	vertical-align:center;
+}
+
+#habit-add{
+	width:15%;
+	background-color:black;
+	border-color:rgba(0,0,0,0);
+}
+
+.header-wrapper{
+	width:70%;
+	text-align: center;
+	background-color:black;
+	color:white;
+}

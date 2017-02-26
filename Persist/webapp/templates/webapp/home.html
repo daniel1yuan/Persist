@@ -1,8 +1,11 @@
 {% extends "webapp/__base.html" %}
 {% load staticfiles %}
 {% block extra_head %}
+
+  <!-- Home page CSS references -->
   <link href="{% static 'webapp/css/home.css' %}" type="text/css" rel="stylesheet">
   <link href="{% static 'webapp/css/habitbar.css' %}" type="text/css" rel="stylesheet">
+  <link href="{% static 'webapp/css/habit_header_bar.css' %}" type="text/css" rel="stylesheet">
 
   <!-- Bootstrap Core CSS -->
   <link href="{% static 'webapp/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -11,12 +14,12 @@
   <!-- Custom Fonts -->
   <link href="{% static 'webapp/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Strait" rel="stylesheet">
+
+  <!-- Javascript files -->
   <script src="{% static 'webapp/js/habits.js' %}"></script>
   <script src="{% static 'webapp/js/auth.js' %}"></script>
   <script src="{% static 'webapp/js/home.js' %}"></script>
-
-
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 {% endblock %}
 {% block content %}
@@ -45,8 +48,8 @@
 				</div>
 			</div>
 			<div class="column habits">
-				<div class = "section-container">
-					{% include "webapp/habitbar.html" %}
+				<div class = "section-container" id="habitstatus">
+					{% include "webapp/habit_header_bar.html" %}
 				</div>
 				<div class = "section-container">
 					{% include "webapp/habitbar.html" %}
