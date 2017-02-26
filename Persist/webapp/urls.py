@@ -16,4 +16,5 @@ urlpatterns = [
   url(r'^_change_habit/$', views.change_habit, name='change_habit'),
   url(r'^_get_all_habits/$', views.get_all_habits, name='get_all_habits'),
   url(r'^_delete_habit/$', views.delete_habit, name='delete_habit'),
+  url(r'^_get_username/$', views.get_username, name='get_username'),
 ]

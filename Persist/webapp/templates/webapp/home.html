@@ -27,13 +27,12 @@
 	<div class="content">
 		{% include "webapp/header.html" %}
 
-
 		<div class="page">
 			<div class="column">
-				<h1>Jishnu Datta</h1>
+				<h1 id="username"></h1>
 				<div class = "section-container day-streak">
 					<div class="streak">	
-						<h1>33</h1>
+						<h1 id = "beststreak"></h1>
 					</div>
 					<div class="day">
 						<h1>Days into not pooping!</h1>
@@ -48,24 +47,9 @@
 					<img src="{% static 'webapp/assets/placeholdergraph.png' %}">
 				</div>
 			</div>
-			<div class="column habits">
+			<div class="column habits" id= "habit-container">
 				<div class = "section-container" id="habitstatus">
 					{% include "webapp/habit_header_bar.html" %}
-				</div>
-				<div class = "section-container">
-					{% include "webapp/habitbar.html" %}
-				</div>
-				<div class = "section-container">
-					{% include "webapp/habitbar.html" %}
-				</div>
-				<div class = "section-container">
-					{% include "webapp/habitbar.html" %}
-				</div>
-				<div class = "section-container">
-					{% include "webapp/habitbar.html" %}
-				</div>
-				<div class = "section-container">
-					{% include "webapp/habitbar.html" %}
 				</div>
 			</div>
 		</div>

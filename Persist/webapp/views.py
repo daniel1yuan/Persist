@@ -151,7 +151,11 @@ def change_habit(request):
     try:
       habit.end_date = int((request.POST['end_date']))/(1000.0) 
     except:
-      habit.end_date = int((request.POST['end_date']))/(1000.0)
+      habit.end_date = habit.end_date
+    try:
+      habit.last_clicked = int((request.POST['last_clicked']))/(1000.0) 
+    except:
+      habit.last_clicked = habit.last_clicked
     try:
       habit.status = request.POST['success_status']
     except:
@@ -174,3 +178,10 @@ def get_all_habits(request):
     return HttpResponse(json.dumps(json_dict))
   else:
     return HttpResponse(json.dumps({"success": False}))
+
+def get_username(request):
+  if request.user.is_authenticated():
+    return HttpResponse(json.dumps({"success": True, "username": request.user.username}))
+  else:
+    return HttpResponse(json.dumps({"success": False}))
+
