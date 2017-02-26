@@ -8,7 +8,8 @@ function get_habit(id, callback) {
       "habit_id": id
 		},
 		success: function(res) {
-      if (res.success && callback) {
+      if (callback) {
+        console.log("successful gethabit");
         id = JSON.parse(res).pk;
         var parsed = JSON.parse(res).fields;
         parsed["id"] = id;
@@ -16,9 +17,6 @@ function get_habit(id, callback) {
         parsed.end_date = new Date(parsed.end_date*1000);
         parsed.last_clicked = new Date(parsed.last_clicked*1000);
         callback(parsed);
-      }
-      else if (callback) {
-        callback(false);
       }
     }
 	});

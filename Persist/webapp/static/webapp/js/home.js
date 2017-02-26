@@ -23,11 +23,23 @@ function sort_timeSince(habits){
 
 var delete_mode = false;
 
+var params = {};
+
 $(document).ready(function(){
   get_all_habits(function(habits){
     test = sort_timeSince(habits);
   });
-  
+
+  $("#new_habit").click(function () {
+    params["name"] = $("#name").val();
+    params["description"] = $("#desc").val();
+    params["end_date"]=new Date($("#date").val());
+    params["monetary_amount"] = Number($("#pledge_amount").val());
+    params["success_status"] = 0;
+    params["charity"] = Number($("#charity").val());
+    create_habit(params,function(x){console.log(x)});
+  });
+
   $("#deletebutton").click(function () {
     if (delete_mode==false) delete_mode = true;
     else delete_mode = false;
