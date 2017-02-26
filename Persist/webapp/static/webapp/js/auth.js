@@ -4,10 +4,12 @@
 //  If it is successful -> redirect to user home page
 //  Otherwise: redirect to login (or stay on login page)
 function login(username, password, callback){
+  var csrftoken = getCookie('csrftoken');
   $.ajax({
     type: "POST",
     url: "/_login/",
     data: {
+      "csrfmiddlewaretoken": csrftoken,
       "username": username,
       "password": password
     },
@@ -52,10 +54,12 @@ function logout(callback){
 
 //  Signs up a new user with the username and password specified
 function signup(username, password, callback){
+  var csrftoken = getCookie('csrftoken');
   $.ajax({
     type: "POST",
     url: "/_adduser/",
     data: {
+      "csrfmiddlewaretoken": csrftoken,
       "username": username,
       "password": password
     },
@@ -64,7 +68,7 @@ function signup(username, password, callback){
       if (res.success){
         //If signup is successful sign them in
         if (callback){
-          callback;
+          callback();
         } 
         login(username, password);
       }else{
@@ -98,10 +102,12 @@ function del_cur_user(callback){
 
 //  Deletes the user specified by username
 function deluser(username, callback){
+  var csrftoken = getCookie('csrftoken');
   $.ajax({
     type: "POST",
     url: "/_deluser/",
     data: {
+      "csrfmiddlewaretoken": csrftoken,
       "username": username,
     },
     success: function(res){

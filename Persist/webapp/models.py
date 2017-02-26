@@ -20,4 +20,3 @@ class Habit(models.Model):
 	charity = models.IntegerField(default = 0)
 	user = models.ForeignKey(User, on_delete = models.CASCADE, null = True)
 
-
