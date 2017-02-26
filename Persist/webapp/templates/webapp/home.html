@@ -27,23 +27,23 @@
 		{% include "webapp/header.html" %}
 		{% include "webapp/habitform.html" %}
 		<div class="page">
-			<div class="column">
+			<div class="column reg">
 				<h1>Jishnu Datta</h1>
 				<div class = "section-container day-streak">
 					<div class="streak">
-						<h1>33</h1>
+						<h1 id="streak">33</h1>
 					</div>
 					<div class="day">
 						<h1>Days into not pooping!</h1>
 					</div>
 				</div>
 				<div class = "section-container">
-					<h1>Top Overall Persistence</h1>
+					<h1 id="Top-Persistence">Top Overall Persistence</h1>
 					<img src="{% static 'webapp/assets/Graph.png' %}">
 				</div>
 				<div class = "section-container">
-					<h1>Average Persistence</h1>
-					<img src="{% static 'webapp/assets/placeholdergraph.png' %}">
+					<h1 id="avg-persistence">Average Persistence</h1>
+					<img src="{% static 'webapp/assets/email_graph.jpg' %}">
 				</div>
 			</div>
 			<div class="column habits">
