@@ -2,6 +2,9 @@
 {% load staticfiles %}
 {% block extra_head %}
 <link href="{% static 'webapp/css/landing.css' %}" type="text/css" rel="stylesheet">
+<link href="{% static 'webapp/css/landing1.css' %}" type="text/css" rel="stylesheet">
+<link href="{% static 'webapp/css/landing2.css' %}" type="text/css" rel="stylesheet">
+<link href="{% static 'webapp/css/landing4.css' %}" type="text/css" rel="stylesheet">
 {% endblock %}
 {% block content %}
 	<div class="content">
@@ -9,8 +12,7 @@
 		<div class="pages">
 			{% include "webapp/landing_one.html" %}
 			{% include "webapp/landing_two.html" %}
-		  	<!-- {% include "webapp/landing_three.html" %} -->
-		  	<!-- {% include "webapp/landing_four.html" %} -->
+		  	{% include "webapp/landing_four.html" %}
 		</div>
 	</div>
 {% endblock %}

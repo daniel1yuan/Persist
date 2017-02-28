@@ -2,15 +2,15 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-	/*border: black solid 1px;*/
-	 user-select: none;
+	/* border: black solid 1px; */
+	user-select: none;
 }
 
 h1, h2, h3{
 	font-family: 'Oswald', sans-serif;
 }h1{
 	text-transform: uppercase;
-}p, a{
+}p, a, h4{
 	font-family: 'Roboto Slab', serif;
 }
 
@@ -22,7 +22,7 @@ h1, h2, h3{
 	display: flex;
 	flex-direction: column;
 }.page{
-	background-color: black;
+	background-color: white;
 }.pageborder{
 	height: 100%;
 	padding: 40px;
@@ -44,17 +44,3 @@ h1, h2, h3{
 	letter-spacing: 50px;
 	text-align: center;
 }
-
-/*.page.third{
-	background-color: white;
-}.pagecontent.third{
-	flex-direction: row;
-	justify-content: space-around;
-	align-items: center;
-	align-content: center;
-}.graph-desc{
-	text-align: center;
-}.graph-desc > img{
-	width: 100%;
-	margin: 20px 0;
-}*/

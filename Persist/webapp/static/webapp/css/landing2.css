@@ -1,18 +1,46 @@
-.page.second{
-	background-color: white;
-}.pagecontent.second{
+.pagecontent.second{
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-}
-.pagecontent.second > h1{
+}.pagecontent.second > h1{
+	color: #9933CC;
 	font-size: 30px;
 	letter-spacing: 10px;
 	padding: 20px 300px;
 	text-align: center;
-	border: gray solid 1px;
-	margin-bottom: 40px;
+	border-bottom: gray solid 3px;
+	margin-top: 20px;
+	margin-bottom: 50px;
+}.persist_description{
+	display: flex;
+	text-align: left;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 80%;
+}.persist_description1{
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+}.persist_description1 > h4{
+	font-size: 70px;
+}.persist_description1 > p{
+	margin-top: 40px;
+	font-size: 20px;
+	color: gray;
+}.persist_description2{
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+}.persist_description2 > h4{
+	font-size: 30px;
+}.persist_description2 > p{
+	font-size: 70px;
+}span.graphvalue1{
+ 	color: blue;
+}span.graphvalue2{
+ 	color: orange;
 }
+
 
 /*.page.second{
 	background-color: white;
