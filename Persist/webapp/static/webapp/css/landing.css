@@ -1,7 +1,7 @@
 *{
 	padding: 0;
 	margin: 0;
-	/*box-sizing: border-box;*/
+	box-sizing: border-box;
 	/*border: black solid 1px;*/
 	 user-select: none;
 }
@@ -10,24 +10,25 @@ h1, h2, h3{
 	font-family: 'Oswald', sans-serif;
 }h1{
 	text-transform: uppercase;
-}p{
+}p, a{
 	font-family: 'Roboto Slab', serif;
 }
 
 .content{
+	width: 100%;
 	background-color: black;
-}
-.pages{
-	padding-top: 50px;
+}.pages{
+	/*padding-top: 50px;*/
 	display: flex;
 	flex-direction: column;
-}
-.page{
+}.page{
 	background-color: black;
-}
-.pagecontent{
-	margin: 50px;
-	height: 800px;
+}.pageborder{
+	height: 100%;
+	padding: 40px;
+}.pagecontent{
+	height: 100%;
+	width: 100%;
 	display: flex;
 	border-radius: 50px;
 	color: black;
@@ -38,64 +39,13 @@ h1, h2, h3{
 	width: 30%;
 	margin: 50px;
 	font-size: 200px;
-	letter-spacing: 50px;
 }.pagetitlebox > h1{
 	font-size: 150px;
 	letter-spacing: 50px;
 	text-align: center;
 }
 
-.page.first{
- 	background-image: url("../assets/sunset.jpg");
- 	background-position: center;
- 	background-repeat: no-repeat;
-}.pagecontent.first{
-	color: white;
-	text-align: center;
-	flex-direction: column;
-	justify-content: center;
-	border: solid 4px white;
-}.first > h1{
-	font-size: 200px;
-	letter-spacing: 50px;
-}#motto{
-	font-size: 20px;
-	text-transform: lowercase;
-	letter-spacing: 15px;
-}
-
-.page.second{
-	background-color: white;
-}.pagecontent.second{
-	flex-direction: row;
-	justify-content: center;
-
-}.desc_stats{
-	margin: 50px 50px 50px 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: top;
-	align-items: center;
-	width: 60%;
-	text-align: center;
-}.desc_stats > p{
-	font-size: 20px;
-	letter-spacing: 5px;
-	line-height: 70px
-}.desc_stats > h2{
-	font-size: 30px;
-	letter-spacing: 20px;
-}.desc_stats > img{
-	width: 80%;
-	margin: 20px 0;
-	border: black 2px solid;
-}span.graphvalue1{
- 	color: blue;
-}span.graphvalue2{
- 	color: orange;
-}
-
-.page.third{
+/*.page.third{
 	background-color: white;
 }.pagecontent.third{
 	flex-direction: row;
@@ -107,34 +57,4 @@ h1, h2, h3{
 }.graph-desc > img{
 	width: 100%;
 	margin: 20px 0;
-}
-
-.page.fourth{
-	background-color: white;
-}.pagecontent.fourth{
-	flex-direction: row-reverse;
-	justify-content: space-between;
-}.profile{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 20%;
-	margin-top: 50px;
-	padding: 50px 50px 50px 50px;
-	border-radius: 20px;
-	transition: all 0.2s ease-out;
-}.profile > h3{
-	text-align: center;
-	padding: 20px 0;
-}.picture{
-	width: 100%;
-	background-color: white;
-	border-radius: 100%;
-	border: 4px white solid;
-	filter:grayscale(70%);
-}.profile:hover{
-	margin-top: 0;
-	background-color: gray;
-}.profile:hover .picture{
-	filter: none;
-}
+}*/

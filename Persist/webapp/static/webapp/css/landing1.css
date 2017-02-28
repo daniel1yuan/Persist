@@ -1,0 +1,38 @@
+.page.first{
+	height:100vh;
+ 	background-image: url("../assets/sunset.jpg");
+ 	background-position: center;
+ 	background-repeat: stretch;
+ 	filter: saturate(20%) hue-rotate(-40deg);
+}.pagecontent.first{
+	color: white;
+	border: solid 4px white;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}.first > h1{
+	font-size: 200px;
+	letter-spacing: 40px;
+	font-weight: 200;
+}#motto{
+	font-size: 20px;
+	text-transform: lowercase;
+	letter-spacing: 15px;
+}#header-login{
+	font-size: 20px;
+	text-transform: lowercase;
+	letter-spacing: 4px;
+	margin-top: 55px;
+	padding: 10px 30px;
+	background-color: #880FAA;
+	color: white;
+	box-shadow: 0 8px 15px 0 rgba(100,0,255,0.5);
+	user-select: none;
+}#header-login:hover{
+	text-decoration: none;
+	color: #454545;
+	background-color: #ABABAB;
+	box-shadow: 0 8px 15px 0 rgba(0,0,0,0.8);
+	cursor: pointer;
+}

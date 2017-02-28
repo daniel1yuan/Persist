@@ -1,0 +1,29 @@
+.page.fourth{
+	background-color: white;
+}.pagecontent.fourth{
+	flex-direction: row-reverse;
+	justify-content: space-between;
+}.profile{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 20%;
+	margin-top: 50px;
+	padding: 50px 50px 50px 50px;
+	border-radius: 20px;
+	transition: all 0.2s ease-out;
+}.profile > h3{
+	text-align: center;
+	padding: 20px 0;
+}.picture{
+	width: 100%;
+	background-color: white;
+	border-radius: 100%;
+	border: 4px white solid;
+	filter:grayscale(70%);
+}.profile:hover{
+	margin-top: 0;
+	background-color: gray;
+}.profile:hover .picture{
+	filter: none;
+}
