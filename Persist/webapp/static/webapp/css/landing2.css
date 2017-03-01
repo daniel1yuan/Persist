@@ -3,8 +3,7 @@
 	justify-content: center;
 	align-items: center;
 }.pagecontent.second > h1{
-	color: #9933CC;
-	font-size: 30px;
+	color: #880FAA;
 	letter-spacing: 10px;
 	padding: 20px 300px;
 	text-align: center;
@@ -20,7 +19,7 @@
 }.persist_description1{
 	display: flex;
 	flex-direction: column;
-	width: 40%;
+	width: 45%;
 }.persist_description1 > h4{
 	font-size: 70px;
 }.persist_description1 > p{
@@ -30,44 +29,6 @@
 }.persist_description2{
 	display: flex;
 	flex-direction: column;
-	width: 50%;
-}.persist_description2 > h4{
-	font-size: 30px;
-}.persist_description2 > p{
-	font-size: 70px;
-}span.graphvalue1{
- 	color: blue;
-}span.graphvalue2{
- 	color: orange;
-}
-
-
-/*.page.second{
-	background-color: white;
-}.pagecontent.second{
-	flex-direction: row;
+	width: 45%;
 	justify-content: center;
-}.desc_stats{
-	margin: 50px 50px 50px 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: top;
-	align-items: center;
-	width: 60%;
-	text-align: center;
-}.desc_stats > p{
-	font-size: 20px;
-	letter-spacing: 5px;
-	line-height: 70px
-}.desc_stats > h2{
-	font-size: 30px;
-	letter-spacing: 20px;
-}.desc_stats > img{
-	width: 80%;
-	margin: 20px 0;
-	border: black 2px solid;
-}span.graphvalue1{
- 	color: blue;
-}span.graphvalue2{
- 	color: orange;
-}*/
+}

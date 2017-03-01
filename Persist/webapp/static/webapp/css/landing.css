@@ -4,17 +4,13 @@
 	box-sizing: border-box;
 	/* border: black solid 1px; */
 	user-select: none;
-}
-
-h1, h2, h3{
+}h1, h2, h3{
 	font-family: 'Oswald', sans-serif;
 }h1{
 	text-transform: uppercase;
 }p, a, h4{
 	font-family: 'Roboto Slab', serif;
-}
-
-.content{
+}.content{
 	width: 100%;
 	background-color: black;
 }.pages{
