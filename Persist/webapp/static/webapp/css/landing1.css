@@ -2,7 +2,6 @@
 	height:100vh;
  	background-image: url("../assets/sunset.jpg");
  	background-position: center;
- 	background-repeat: stretch;
  	filter: saturate(20%) hue-rotate(-40deg);
 }.pagecontent.first{
 	color: white;
