@@ -1,0 +1,41 @@
+{% load staticfiles %}
+<link href="{% static 'webapp/css/habitbar.css' %}" type="text/css" rel="stylesheet">
+<link href="{% static 'webapp/css/temphome.css' %}" type="text/css" rel="stylesheet">
+<div class="everything">
+	<div class="header">
+		{% include "webapp/header.html" %}
+	</div>
+	<div class="content">
+		<div class="habitbars">
+			{% include "webapp/habit_header_bar.html" %}
+			{% include "webapp/habitbar.html" %}
+			{% include "webapp/habitbar.html" %}
+			{% include "webapp/habitbar.html" %}
+		</div>
+		<div class="habitcharts">
+			<h1>Charts</h1>
+			<div class="ct-chart ct-golden-section" id="chart1"></div>
+					<script>
+						var data = {
+						  labels: ['Week1', 'Week2', 'Week3', 'Week4', 'Week5', 'Week6'],
+						  series: [
+						    [100, 104, 103, 7, 5, 10],
+						    [3, 2, 9, 5, 4, 6],
+						    [2, 1, -3, -4, -2, 0]
+						  ]
+						};
+						var options = {
+						  showPoint: false,
+						  lineSmooth: true,
+						  axisX: {
+						    showGrid: false,
+						  },
+						  axisY: {
+						  	 showGrid: false,
+						  }
+						};
+						new Chartist.Line('.ct-chart', data, options);
+					</script>
+		</div>
+	</div>
+</div>

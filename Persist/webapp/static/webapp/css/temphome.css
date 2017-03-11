@@ -1,0 +1,28 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.everything{
+
+}.header{
+
+}.content{
+	padding-top: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	background: pink;
+
+}.habitbars{
+	text-align: center;
+	margin-top:70px;
+	width: 60%;
+}.habitbars>h1{
+	margin-bottom: 40px;
+}.habitcharts{
+	text-align: center;
+	margin-top:70px;
+	width: 60%;
+}

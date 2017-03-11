@@ -1,7 +1,3 @@
-* {
-  /*border-radius: 0 !important;*/
-}
-
 .habit-header-bar{
 	display:flex;
 	flex-direction: row;
